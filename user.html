@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUYOJ - Hệ thống Chấm bài Trực tuyến</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: #f8fafc; color: #1e293b; }
+        .nav-link { cursor: pointer; padding: 6px 14px; border-radius: 6px; font-weight: 600; font-size: 14px; color: #64748b; transition: all 0.2s; }
+        .nav-link:hover, .nav-link.active { color: #0f172a; background-color: #f1f5f9; }
+        .user-section { display: none; }
+        .user-section.active { display: block; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+    <!-- Navbar User -->
+    <nav class="bg-white border-b h-[60px] flex justify-between items-center px-6 sticky top-0 z-40 shadow-sm">
+        <div class="flex items-center space-x-8 h-full">
+            <div class="flex items-center">
+                <div class="w-7 h-7 bg-red-600 rounded-lg flex items-center justify-center text-white font-bold mr-2 shadow">H</div>
+                <span class="font-extrabold text-lg tracking-tight text-red-600">HUYOJ</span>
+            </div>
+            <div class="hidden md:flex items-center space-x-2">
+                <span onclick="switchUserTab('problems')" id="nav-problems" class="nav-link active"><i class="fa-solid fa-book-open mr-1.5"></i> Bài tập</span>
+                <span onclick="switchUserTab('contests')" id="nav-contests" class="nav-link"><i class="fa-solid fa-trophy mr-1.5"></i> Kỳ thi</span>
+                <span onclick="switchUserTab('news')" id="nav-news" class="nav-link"><i class="fa-solid fa-bullhorn mr-1.5"></i> Tin tức</span>
+                <span onclick="switchUserTab('ranking')" id="nav-ranking" class="nav-link"><i class="fa-solid fa-medal mr-1.5"></i> Xếp hạng</span>
+                <span onclick="switchUserTab('submissions')" id="nav-submissions" class="nav-link"><i class="fa-solid fa-history mr-1.5"></i> Lịch sử nộp bài</span>
+            </div>
+        </div>
+        <div class="flex items-center space-x-3 text-sm">
+            <div id="authArea" class="flex items-center space-x-3"></div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <main class="max-w-[1280px] w-full mx-auto p-6 flex-grow space-y-6">
+
+        <!-- TAB 1: DANH SÁCH BÀI TẬP -->
+        <section id="user-problems" class="user-section active space-y-6">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-extrabold text-gray-900"><i class="fa-solid fa-book text-red-600 mr-2"></i> Danh sách Bài tập lập trình</h1>
+            </div>
+            <div class="bg-white border rounded-xl shadow-sm overflow-hidden">
+                <table class="w-full text-left border-collapse text-sm">
+                    <thead>
+                        <tr class="bg-gray-50 border-b text-gray-600 font-semibold">
+                            <th class="p-4 w-28">Mã bài</th>
+                            <th class="p-4">Tên bài toán</th>
+                            <th class="p-4 w-36">Độ khó</th>
+                            <th class="p-4">Thể loại</th>
+                            <th class="p-4 w-32 text-center">Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody id="userProblemsTableBody"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- TAB 2: KỲ THI (CONTESTS) -->
+        <section id="user-contests" class="user-section space-y-6">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-extrabold text-gray-900"><i class="fa-solid fa-trophy text-red-600 mr-2"></i> Kỳ thi Lập trình (Contests)</h1>
+            </div>
+            <div id="userContestsList" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+        </section>
+
+        <!-- TAB 3: TIN TỨC & THÔNG BÁO -->
+        <section id="user-news" class="user-section space-y-6">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-extrabold text-gray-900"><i class="fa-solid fa-bullhorn text-red-600 mr-2"></i> Tin tức & Thông báo hệ thống</h1>
+            </div>
+            <div id="userNewsList" class="space-y-4"></div>
+        </section>
+
+        <!-- TAB 4: BẢNG XẾP HẠNG -->
+        <section id="user-ranking" class="user-section space-y-6">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-extrabold text-gray-900"><i class="fa-solid fa-medal text-red-600 mr-2"></i> Bảng xếp hạng (Rankings)</h1>
+            </div>
+            <div class="bg-white border rounded-xl shadow-sm overflow-hidden">
+                <table class="w-full text-left border-collapse text-sm">
+                    <thead>
+                        <tr class="bg-gray-50 border-b text-gray-600 font-semibold">
+                            <th class="p-4 w-20 text-center">#</th>
+                            <th class="p-4">Thành viên</th>
+                            <th class="p-4 w-40 text-center">Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody id="userRankingTableBody"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- TAB 5: LỊCH SỬ NỘP BÀI -->
+        <section id="user-submissions" class="user-section space-y-6">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-extrabold text-gray-900"><i class="fa-solid fa-history text-red-600 mr-2"></i> Lịch sử nộp bài gần đây</h1>
+            </div>
+            <div class="bg-white border rounded-xl shadow-sm overflow-hidden">
+                <table class="w-full text-left border-collapse text-sm">
+                    <thead>
+                        <tr class="bg-gray-50 border-b text-gray-600 font-semibold">
+                            <th class="p-4 w-32">Thời gian</th>
+                            <th class="p-4 w-32">Tài khoản</th>
+                            <th class="p-4 w-36">Bài tập</th>
+                            <th class="p-4 w-32">Ngôn ngữ</th>
+                            <th class="p-4 w-36 text-center">Kết quả</th>
+                        </tr>
+                    </thead>
+                    <tbody id="userSubsTableBody"></tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- MODAL CHI TIẾT BÀI TẬP & NỘP CODE -->
+    <div id="solveModal" class="fixed inset-0 bg-black/50 hidden justify-center items-center z-50">
+        <div class="bg-white w-[900px] max-h-[90vh] overflow-y-auto rounded-2xl shadow-2xl p-8 space-y-6">
+            <div class="flex justify-between items-center border-b pb-4">
+                <div>
+                    <span id="modalProbCode" class="text-xs font-mono font-bold bg-blue-100 text-blue-700 px-2 py-1 rounded"></span>
+                    <h3 id="modalProbTitle" class="font-extrabold text-xl text-gray-900 mt-1"></h3>
+                </div>
+                <button onclick="closeSolveModal()" class="text-gray-400 hover:text-black"><i class="fa-solid fa-xmark text-xl"></i></button>
+            </div>
+            <div class="space-y-4 text-sm">
+                <div>
+                    <h4 class="font-bold text-xs uppercase text-gray-500 mb-1">Mô tả đề bài:</h4>
+                    <p id="modalProbDesc" class="text-gray-700 whitespace-pre-line bg-gray-50 p-4 rounded-xl border"></p>
+                </div>
+                
+                <div class="flex justify-between items-center">
+                    <label class="block font-bold text-xs uppercase text-gray-700">Chọn Ngôn ngữ Lập trình:</label>
+                    <select id="userLanguage" class="border px-3 py-2 rounded-xl font-bold text-xs bg-gray-50 focus:bg-white focus:ring-2 focus:ring-red-500 outline-none">
+                        <option value="C++ (g++ 11)">C++ (g++ 11)</option>
+                        <option value="Python 3">Python 3</option>
+                        <option value="Java (OpenJDK)">Java (OpenJDK)</option>
+                        <option value="Pascal (Free Pascal)">Pascal (Free Pascal)</option>
+                        <option value="C">C (gcc)</option>
+                    </select>
+                </div>
+
+                <div class="space-y-2">
+                    <label class="block font-bold text-xs uppercase text-gray-700">Mã nguồn giải pháp:</label>
+                    <textarea id="userSourceCode" rows="8" placeholder="Nhập code của bạn tại đây..." class="w-full border p-3 rounded-xl font-mono text-xs bg-gray-50 focus:bg-white focus:ring-2 focus:ring-red-500 outline-none"></textarea>
+                </div>
+                
+                <div class="flex justify-between items-center pt-3 border-t">
+                    <div id="judgeResultStatus" class="font-bold text-sm"></div>
+                    <div class="space-x-3">
+                        <button onclick="closeSolveModal()" class="bg-gray-100 text-gray-700 px-5 py-2.5 rounded-xl font-bold text-sm">Đóng</button>
+                        <button onclick="submitCode()" class="bg-red-600 text-white px-6 py-2.5 rounded-xl font-bold text-sm hover:bg-red-700 shadow">Nộp bài chấm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL ĐĂNG NHẬP / ĐĂNG KÝ -->
+    <div id="authModal" class="fixed inset-0 bg-black/50 hidden justify-center items-center z-50">
+        <div class="bg-white w-[400px] rounded-2xl shadow-2xl p-8 space-y-6">
+            <div class="flex justify-between items-center border-b pb-4">
+                <h3 id="authModalTitle" class="font-extrabold text-xl text-red-600">Đăng nhập tài khoản</h3>
+                <button onclick="closeAuthModal()" class="text-gray-400 hover:text-black"><i class="fa-solid fa-xmark text-xl"></i></button>
+            </div>
+            <form id="authForm" onsubmit="handleAuthSubmit(event)" class="space-y-4 text-sm">
+                <div>
+                    <label class="block font-bold text-xs text-gray-700 uppercase mb-1">Tên tài khoản:</label>
+                    <input type="text" id="authUsername" required placeholder="Username..." class="w-full border p-3 rounded-xl outline-none bg-gray-50 focus:bg-white focus:ring-2 focus:ring-red-500">
+                </div>
+                <div>
+                    <label class="block font-bold text-xs text-gray-700 uppercase mb-1">Mật khẩu:</label>
+                    <input type="password" id="authPassword" required placeholder="Password..." class="w-full border p-3 rounded-xl outline-none bg-gray-50 focus:bg-white focus:ring-2 focus:ring-red-500">
+                </div>
+                <div class="flex justify-between items-center text-xs">
+                    <span id="authToggleText" onclick="toggleAuthMode()" class="text-blue-600 cursor-pointer font-bold hover:underline">Chưa có tài khoản? Đăng ký ngay</span>
+                </div>
+                <button type="submit" id="authSubmitBtn" class="w-full bg-red-600 text-white py-3 rounded-xl font-bold hover:bg-red-700 shadow">Đăng nhập</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- FOOTER CÓ CHÈN LINK HTML THEO YÊU CẦU -->
+    <footer class="bg-white border-t py-6 text-center text-xs text-gray-500 mt-12 space-y-1">
+        <div>HUYOJ Online Judge &copy; 2026.</div>
+        <div>Nền tảng chấm bài trực tuyến | <a href="https://vnoi.info" target="_blank" rel="noopener" class="text-red-600 font-bold hover:underline">Tìm hiểu thêm tại VNOI</a></div>
+    </footer>
+
+    <script>
+        if (!localStorage.getItem('vnoi_users')) {
+            localStorage.setItem('vnoi_users', JSON.stringify([
+                { username: 'adminlh', password: '123', role: 'admin', rating: 100, status: 'Hoạt động' },
+                { username: 'coder99', password: '123', role: 'user', rating: 0, status: 'Hoạt động' }
+            ]));
+        }
+        if (!localStorage.getItem('vnoi_news')) {
+            localStorage.setItem('vnoi_news', JSON.stringify([
+                { id: 1, title: 'Chào mừng đến với hệ thống HUYOJ!', content: 'Hệ thống chấm bài trực tuyến chính thức hoạt động từ hôm nay. Chúc các bạn luyện tập thật tốt!', date: '25/07/2026' }
+            ]));
+        }
+
+        let isRegisterMode = false;
+        let currentActiveProblemId = null;
+
+        function checkAuthUser() {
+            const currentUser = localStorage.getItem('vnoi_current_user');
+            const users = JSON.parse(localStorage.getItem('vnoi_users')) || [];
+            const user = users.find(u => u.username === currentUser);
+            const authArea = document.getElementById('authArea');
+
+            if (user) {
+                if (user.status === 'Bị khóa') {
+                    localStorage.removeItem('vnoi_current_user');
+                    alert('Tài khoản của bạn đã bị khóa bởi quản trị viên!');
+                    checkAuthUser();
+                    return;
+                }
+
+                let adminBtn = user.role === 'admin' ? `<a href="admin.html" class="bg-red-600 text-white px-3 py-2 rounded-xl font-bold text-xs hover:bg-red-700 transition">Trang Admin</a>` : '';
+                const userRating = (user.rating !== undefined) ? user.rating : 0;
+                authArea.innerHTML = `
+                    ${adminBtn}
+                    <div class="font-bold text-gray-800 text-sm"><i class="fa-solid fa-user-circle text-red-600 mr-1"></i> ${user.username} <span class="text-xs text-purple-600 font-mono">(${userRating})</span></div>
+                    <button onclick="logout()" class="bg-gray-100 text-gray-700 p-2.5 rounded-xl text-sm font-bold hover:bg-red-50 hover:text-red-600 transition" title="Đăng xuất"><i class="fa-solid fa-right-from-bracket"></i></button>
+                `;
+            } else {
+                authArea.innerHTML = `
+                    <button onclick="openAuthModal(false)" class="bg-red-600 text-white px-4 py-2 rounded-xl font-bold text-xs hover:bg-red-700 shadow transition">Đăng nhập</button>
+                    <button onclick="openAuthModal(true)" class="bg-gray-100 text-gray-700 px-4 py-2 rounded-xl font-bold text-xs hover:bg-gray-200 transition">Đăng ký</button>
+                `;
+            }
+        }
+
+        function switchUserTab(tabName) {
+            checkAuthUser();
+            document.querySelectorAll('.user-section').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.nav-link').forEach(el => el.classList.remove('active'));
+            document.getElementById('user-' + tabName).classList.add('active');
+            document.getElementById('nav-' + tabName).classList.add('active');
+
+            if(tabName === 'problems') renderUserProblems();
+            if(tabName === 'contests') renderUserContests();
+            if(tabName === 'news') renderUserNews();
+            if(tabName === 'ranking') renderUserRanking();
+            if(tabName === 'submissions') renderUserSubmissions();
+        }
+
+        function renderUserProblems() {
+            const problems = JSON.parse(localStorage.getItem('vnoi_problems')) || [];
+            document.getElementById('userProblemsTableBody').innerHTML = problems.length > 0 ? problems.map(p => `
+                <tr class="border-b hover:bg-gray-50 transition cursor-pointer" onclick="openSolveModal(${p.id})">
+                    <td class="p-4 font-mono font-bold text-blue-600">${p.code}</td>
+                    <td class="p-4 font-bold text-gray-800">${p.title}</td>
+                    <td class="p-4 font-bold text-green-600">${p.difficulty}</td>
+                    <td class="p-4 text-xs text-gray-500">${(p.tags || []).join(', ')}</td>
+                    <td class="p-4 text-center">
+                        <button class="bg-blue-600 text-white px-3 py-1.5 rounded-lg text-xs font-bold hover:bg-blue-700 transition">Giải bài</button>
+                    </td>
+                </tr>
+            `).join('') : `<tr><td colspan="5" class="p-6 text-center text-gray-400">Chưa có bài tập nào trên hệ thống.</td></tr>`;
+        }
+
+        function renderUserContests() {
+            const contests = JSON.parse(localStorage.getItem('vnoi_contests')) || [];
+            document.getElementById('userContestsList').innerHTML = contests.length > 0 ? contests.map(c => `
+                <div class="bg-white border rounded-xl p-6 shadow-sm space-y-3">
+                    <h3 class="font-extrabold text-lg text-gray-900">${c.title}</h3>
+                    <p class="text-xs text-gray-500"><i class="fa-solid fa-calendar mr-1"></i> ${c.startTime} - ${c.endTime}</p>
+                    <p class="text-sm text-gray-700">${c.desc || 'Không có mô tả.'}</p>
+                    <button class="bg-red-600 text-white px-4 py-2 rounded-xl text-xs font-bold hover:bg-red-700 transition">Tham gia ngay</button>
+                </div>
+            `).join('') : '<div class="text-gray-400 text-center col-span-2 py-8">Chưa có kỳ thi nào diễn ra.</div>';
+        }
+
+        function renderUserNews() {
+            const newsList = JSON.parse(localStorage.getItem('vnoi_news')) || [];
+            document.getElementById('userNewsList').innerHTML = newsList.length > 0 ? newsList.map(n => `
+                <div class="bg-white border rounded-xl p-6 shadow-sm space-y-2">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-extrabold text-base text-gray-900"><i class="fa-solid fa-circle-info text-red-600 mr-2"></i>${n.title}</h3>
+                        <span class="text-xs font-bold text-gray-400">${n.date}</span>
+                    </div>
+                    <p class="text-sm text-gray-700 whitespace-pre-line pl-6">${n.content}</p>
+                </div>
+            `).join('') : '<div class="text-gray-400 text-center py-8">Chưa có thông báo nào từ ban quản trị.</div>';
+        }
+
+        function renderUserRanking() {
+            const users = JSON.parse(localStorage.getItem('vnoi_users')) || [];
+            users.sort((a, b) => {
+                let rA = (a.rating !== undefined) ? a.rating : 0;
+                let rB = (b.rating !== undefined) ? b.rating : 0;
+                return rB - rA;
+            });
+            document.getElementById('userRankingTableBody').innerHTML = users.map((u, index) => {
+                const uRating = (u.rating !== undefined) ? u.rating : 0;
+                return `
+                    <tr class="border-b hover:bg-gray-50 transition">
+                        <td class="p-4 text-center font-extrabold ${index === 0 ? 'text-yellow-500 text-lg' : index === 1 ? 'text-gray-400 text-lg' : index === 2 ? 'text-amber-600 text-lg' : 'text-gray-600'}">${index + 1}</td>
+                        <td class="p-4 font-bold text-blue-600">${u.username}</td>
+                        <td class="p-4 text-center font-mono font-extrabold text-purple-700">${uRating}</td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function renderUserSubmissions() {
+            const subs = JSON.parse(localStorage.getItem('vnoi_submissions')) || [];
+            document.getElementById('userSubsTableBody').innerHTML = subs.length > 0 ? subs.map(s => `
+                <tr class="border-b hover:bg-gray-50 transition">
+                    <td class="p-4 text-xs text-gray-500">${s.time}</td>
+                    <td class="p-4 font-bold text-gray-800">${s.username}</td>
+                    <td class="p-4 font-mono font-bold text-blue-600">${s.problemCode}</td>
+                    <td class="p-4 text-xs font-bold text-gray-600">${s.language || 'C++'}</td>
+                    <td class="p-4 text-center font-bold ${s.verdict === 'Accepted' ? 'text-green-600' : 'text-red-600'}">${s.verdict}</td>
+                </tr>
+            `).join('') : '<tr><td colspan="5" class="p-6 text-center text-gray-400">Chưa có lịch sử nộp bài nào.</td></tr>';
+        }
+
+        function openSolveModal(id) {
+            checkAuthUser();
+            const currentUser = localStorage.getItem('vnoi_current_user');
+            if(!currentUser) return;
+
+            const problems = JSON.parse(localStorage.getItem('vnoi_problems')) || [];
+            const p = problems.find(x => x.id === id);
+            if(!p) return;
+
+            currentActiveProblemId = id;
+            document.getElementById('modalProbCode').innerText = p.code;
+            document.getElementById('modalProbTitle').innerText = p.title;
+            document.getElementById('modalProbDesc').innerText = p.desc;
+            document.getElementById('userSourceCode').value = '';
+            document.getElementById('judgeResultStatus').innerHTML = '';
+
+            document.getElementById('solveModal').classList.remove('hidden');
+            document.getElementById('solveModal').classList.add('flex');
+        }
+
+        function closeSolveModal() {
+            document.getElementById('solveModal').classList.add('hidden');
+        }
+
+        function submitCode() {
+            checkAuthUser();
+            const currentUser = localStorage.getItem('vnoi_current_user');
+            if(!currentUser) {
+                alert('Tài khoản của bạn đã bị đăng xuất hoặc bị khóa!');
+                closeSolveModal();
+                return;
+            }
+
+            const users = JSON.parse(localStorage.getItem('vnoi_users')) || [];
+            const u = users.find(x => x.username === currentUser);
+            if(!u || u.status === 'Bị khóa') {
+                alert('Tài khoản của bạn đã bị khóa bởi quản trị viên!');
+                localStorage.removeItem('vnoi_current_user');
+                checkAuthUser();
+                closeSolveModal();
+                return;
+            }
+
+            const code = document.getElementById('userSourceCode').value.trim();
+            const language = document.getElementById('userLanguage').value;
+            if(!code) {
+                alert('Vui lòng nhập mã nguồn giải pháp!');
+                return;
+            }
+
+            const problems = JSON.parse(localStorage.getItem('vnoi_problems')) || [];
+            const p = problems.find(x => x.id === currentActiveProblemId);
+            const statusEl = document.getElementById('judgeResultStatus');
+            
+            let hasValidSyntax = true;
+            if (code.length < 5) {
+                hasValidSyntax = false;
+            } else {
+                if (language.includes('C++') || language.includes('C')) {
+                    hasValidSyntax = code.includes('main');
+                } else if (language.includes('Python')) {
+                    hasValidSyntax = code.includes('print');
+                } else if (language.includes('Java')) {
+                    hasValidSyntax = code.includes('class') && code.includes('main');
+                } else if (language.includes('Pascal')) {
+                    hasValidSyntax = code.includes('begin') && code.includes('end');
+                }
+            }
+
+            if (!hasValidSyntax) {
+                statusEl.innerHTML = `<span class="text-orange-600 font-extrabold"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Kết quả: Compilation Error (Lỗi biên dịch cú pháp ${language})</span>`;
+                saveSubmission(currentUser, language, 'Compilation Error');
+                return;
+            }
+
+            const isTLE = code.includes('while(true)') || code.includes('while (true)') || code.includes('for(;;)') || code.includes('while(1)');
+
+            const testCases = (p && p.testCases && p.testCases.length > 0) ? p.testCases : [{ input: '', output: '' }];
+            let currentTestIdx = 0;
+            const totalTests = testCases.length;
+
+            function runNextTest() {
+                if (currentTestIdx < totalTests) {
+                    if (isTLE) {
+                        statusEl.innerHTML = `<span class="text-yellow-600 font-extrabold"><i class="fa-solid fa-clock mr-1"></i> Kết quả: Time Limit Exceeded trên Test ${currentTestIdx + 1}/${totalTests}</span>`;
+                        saveSubmission(currentUser, language, 'Time Limit Exceeded');
+                        return;
+                    }
+
+                    let currentTC = testCases[currentTestIdx];
+                    let isPassed = true;
+                    
+                    if (code.includes('wrong') || code.includes('sai')) {
+                        isPassed = false;
+                    } else if (currentTC.output && !code.includes(currentTC.output) && !code.includes('cout') && !code.includes('print')) {
+                        isPassed = false;
+                    }
+
+                    if (!isPassed) {
+                        statusEl.innerHTML = `<span class="text-red-600 font-extrabold"><i class="fa-solid fa-circle-xmark mr-1"></i> Kết quả: Wrong Answer trên Test ${currentTestIdx + 1}/${totalTests}</span>`;
+                        saveSubmission(currentUser, language, 'Wrong Answer');
+                        return;
+                    }
+
+                    statusEl.innerHTML = `<span class="text-blue-600"><i class="fa-solid fa-spinner fa-spin mr-1"></i> Đang chạy Test ${currentTestIdx + 1}/${totalTests} (Passed)...</span>`;
+                    currentTestIdx++;
+                    setTimeout(runNextTest, 300);
+                } else {
+                    statusEl.innerHTML = `<span class="text-green-600 font-extrabold"><i class="fa-solid fa-circle-check mr-1"></i> Kết quả: Accepted (${totalTests}/${totalTests} tests passed - 100 điểm)</span>`;
+                    saveSubmission(currentUser, language, 'Accepted');
+
+                    let usersList = JSON.parse(localStorage.getItem('vnoi_users')) || [];
+                    let usr = usersList.find(x => x.username === currentUser);
+                    if(usr) {
+                        let currentR = (usr.rating !== undefined) ? usr.rating : 0;
+                        usr.rating = currentR + 15;
+                        localStorage.setItem('vnoi_users', JSON.stringify(usersList));
+                    }
+                }
+            }
+
+            runNextTest();
+        }
+
+        function saveSubmission(username, language, verdict) {
+            const problems = JSON.parse(localStorage.getItem('vnoi_problems')) || [];
+            const p = problems.find(x => x.id === currentActiveProblemId);
+            let subs = JSON.parse(localStorage.getItem('vnoi_submissions')) || [];
+            subs.unshift({
+                time: new Date().toLocaleTimeString() + ' ' + new Date().toLocaleDateString(),
+                username: username,
+                problemCode: p ? p.code : 'P01',
+                language: language,
+                verdict: verdict
+            });
+            localStorage.setItem('vnoi_submissions', JSON.stringify(subs));
+        }
+
+        function openAuthModal(register) {
+            isRegisterMode = register;
+            document.getElementById('authModalTitle').innerText = register ? 'Đăng ký tài khoản mới' : 'Đăng nhập hệ thống';
+            document.getElementById('authSubmitBtn').innerText = register ? 'Đăng ký' : 'Đăng nhập';
+            document.getElementById('authToggleText').innerText = register ? 'Đã có tài khoản? Đăng nhập' : 'Chưa có tài khoản? Đăng ký ngay';
+            document.getElementById('authModal').classList.remove('hidden');
+            document.getElementById('authModal').classList.add('flex');
+        }
+
+        function closeAuthModal() {
+            document.getElementById('authModal').classList.add('hidden');
+        }
+
+        function toggleAuthMode() {
+            openAuthModal(!isRegisterMode);
+        }
+
+        function handleAuthSubmit(e) {
+            e.preventDefault();
+            const username = document.getElementById('authUsername').value.trim();
+            const password = document.getElementById('authPassword').value.trim();
+            let users = JSON.parse(localStorage.getItem('vnoi_users')) || [];
+
+            if(isRegisterMode) {
+                if(users.some(u => u.username === username)) {
+                    alert('Tên tài khoản này đã tồn tại!');
+                    return;
+                }
+                users.push({ username, password, role: 'user', rating: 0, status: 'Hoạt động' });
+                localStorage.setItem('vnoi_users', JSON.stringify(users));
+                alert('Đăng ký thành công! Hãy đăng nhập.');
+                openAuthModal(false);
+            } else {
+                const u = users.find(x => x.username === username && x.password === password);
+                if(u) {
+                    if(u.status === 'Bị khóa') {
+                        alert('Tài khoản của bạn đã bị khóa bởi quản trị viên!');
+                        return;
+                    }
+                    localStorage.setItem('vnoi_current_user', username);
+                    closeAuthModal();
+                    checkAuthUser();
+                    renderUserRanking();
+                } else {
+                    alert('Sai tên đăng nhập hoặc mật khẩu!');
+                }
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem('vnoi_current_user');
+            checkAuthUser();
+        }
+
+        checkAuthUser();
+        renderUserProblems();
+    </script>
+</body>
+</html>

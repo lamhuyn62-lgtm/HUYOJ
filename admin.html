@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUYOJ - Trang Quản trị Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: #f8fafc; color: #1e293b; }
+        .nav-link { cursor: pointer; padding: 6px 14px; border-radius: 6px; font-weight: 600; font-size: 14px; color: #64748b; transition: all 0.2s; }
+        .nav-link:hover, .nav-link.active { color: #0f172a; background-color: #f1f5f9; }
+        .admin-section { display: none; }
+        .admin-section.active { display: block; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+    <!-- Navbar Admin -->
+    <nav class="bg-white border-b h-[60px] flex justify-between items-center px-6 sticky top-0 z-40 shadow-sm">
+        <div class="flex items-center space-x-8 h-full">
+            <div class="flex items-center">
+                <div class="w-7 h-7 bg-red-600 rounded-lg flex items-center justify-center text-white font-bold mr-2 shadow">H</div>
+                <span class="font-extrabold text-lg tracking-tight text-red-600">HUYOJ ADMIN</span>
+            </div>
+            <div class="hidden md:flex items-center space-x-2">
+                <span onclick="switchAdminTab('problems')" id="nav-problems" class="nav-link active"><i class="fa-solid fa-book-open mr-1.5"></i> Quản lý Bài tập</span>
+                <span onclick="switchAdminTab('contests')" id="nav-contests" class="nav-link"><i class="fa-solid fa-trophy mr-1.5"></i> Quản lý Kỳ thi</span>
+                <span onclick="switchAdminTab('news')" id="nav-news" class="nav-link"><i class="fa-solid fa-bullhorn mr-1.5"></i> Quản lý Tin tức</span>
+                <span onclick="switchAdminTab('users')" id="nav-users" class="nav-link"><i class="fa-solid fa-users mr-1.5"></i> Quản lý Thành viên</span>
+            </div>
+        </div>
+        <div class="flex items-center space-x-3 text-sm">
+            <a href="user.html" class="bg-gray-100 text-gray-700 px-3 py-2 rounded-xl font-bold text-xs hover:bg-gray-200 transition"><i class="fa-solid fa-arrow-left mr-1"></i> Về trang User</a>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <main class="max-w-[1280px] w-full mx-auto p-6 flex-grow space-y-6">
+
+        <!-- TAB 1: QUẢN LÝ BÀI TẬP -->
+        <section id="admin-problems" class="admin-section active space-y-6">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-extrabold text-gray-900"><i class="fa-solid fa-book text-red-600 mr-2"></i> Quản lý Bài tập hệ thống</h1>
+                <button onclick="openProblemModal()" class="bg-red-600 text-white px-4 py-2.5 rounded-xl font-bold text-xs hover:bg-red-700 shadow transition"><i class="fa-solid fa-plus mr-1"></i> Thêm bài tập mới</button>
+            </div>
+            <div class="bg-white border rounded-xl shadow-sm overflow-hidden">
+                <table class="w-full text-left border-collapse text-sm">
+                    <thead>
+                        <tr class="bg-gray-50 border-b text-gray-600 font-semibold">
+                            <th class="p-4 w-28">Mã bài</th>
+                            <th class="p-4">Tên bài toán</th>
+                            <th class="p-4 w-36">Độ khó</th>
+                            <th class="p-4 w-32 text-center">Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminProblemsTableBody"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- TAB 2: QUẢN LÝ KỲ THI -->
+        <section id="admin-contests" class="admin-section space-y-6">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-extrabold text-gray-900"><i class="fa-solid fa-trophy text-red-600 mr-2"></i> Quản lý Kỳ thi</h1>
+                <button onclick="openContestModal()" class="bg-red-600 text-white px-4 py-2.5 rounded-xl font-bold text-xs hover:bg-red-700 shadow transition"><i class="fa-solid fa-plus mr-1"></i> Tạo kỳ thi mới</button>
+            </div>
+            <div id="adminContestsList" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+        </section>
+
+        <!-- TAB 3: QUẢN LÝ TIN TỨC -->
+        <section id="admin-news" class="admin-section space-y-6">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-extrabold text-gray-900"><i class="fa-solid fa-bullhorn text-red-600 mr-2"></i> Quản lý Tin tức & Thông báo</h1>
+                <button onclick="openNewsModal()" class="bg-red-600 text-white px-4 py-2.5 rounded-xl font-bold text-xs hover:bg-red-700 shadow transition"><i class="fa-solid fa-plus mr-1"></i> Đăng thông báo</button>
+            </div>
+            <div id="adminNewsList" class="space-y-4"></div>
+        </section>
+
+        <!-- TAB 4: QUẢN LÝ THÀNH VIÊN -->
+        <section id="admin-users" class="admin-section space-y-6">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-extrabold text-gray-900"><i class="fa-solid fa-users text-red-600 mr-2"></i> Quản lý Thành viên hệ thống</h1>
+            </div>
+            <div class="bg-white border rounded-xl shadow-sm overflow-hidden">
+                <table class="w-full text-left border-collapse text-sm">
+                    <thead>
+                        <tr class="bg-gray-50 border-b text-gray-600 font-semibold">
+                            <th class="p-4">Tài khoản</th>
+                            <th class="p-4 w-32">Vai trò</th>
+                            <th class="p-4 w-32 text-center">Rating</th>
+                            <th class="p-4 w-32 text-center">Trạng thái</th>
+                            <th class="p-4 w-44 text-center">Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminUsersTableBody"></tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- MODAL THÊM/SỬA BÀI TẬP & TEST CASE -->
+    <div id="problemModal" class="fixed inset-0 bg-black/50 hidden justify-center items-center z-50">
+        <div class="bg-white w-[750px] max-h-[90vh] overflow-y-auto rounded-2xl shadow-2xl p-8 space-y-4">
+            <div class="flex justify-between items-center border-b pb-4">
+                <h3 id="problemModalTitle" class="font-extrabold text-xl text-red-600">Thêm bài tập mới</h3>
+                <button onclick="closeProblemModal()" class="text-gray-400 hover:text-black"><i class="fa-solid fa-xmark text-xl"></i></button>
+            </div>
+            <form id="problemForm" onsubmit="handleProblemSubmit(event)" class="space-y-4 text-sm">
+                <input type="hidden" id="probEditId">
+                <div>
+                    <label class="block font-bold text-xs text-gray-700 uppercase mb-1">Mã bài (Code):</label>
+                    <input type="text" id="probCode" required placeholder="VD: SUMA, HELLO..." class="w-full border p-3 rounded-xl outline-none bg-gray-50 focus:bg-white focus:ring-2 focus:ring-red-500 font-mono">
+                </div>
+                <div>
+                    <label class="block font-bold text-xs text-gray-700 uppercase mb-1">Tên bài toán:</label>
+                    <input type="text" id="probTitle" required placeholder="Tên hiển thị..." class="w-full border p-3 rounded-xl outline-none bg-gray-50 focus:bg-white focus:ring-2 focus:ring-red-500">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block font-bold text-xs text-gray-700 uppercase mb-1">Độ khó:</label>
+                        <select id="probDiff" class="w-full border p-3 rounded-xl outline-none bg-gray-50 focus:bg-white focus:ring-2 focus:ring-red-500">
+                            <option value="Dễ">Dễ</option>
+                            <option value="Trung bình">Trung bình</option>
+                            <option value="Khó">Khó</option>
+                            <option value="Cực khó">Cực khó</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block font-bold text-xs text-gray-700 uppercase mb-1">Thể loại (cách nhau bởi dấu phẩy):</label>
+                        <input type="text" id="probTags" placeholder="Implementation, Math..." class="w-full border p-3 rounded-xl outline-none bg-gray-50 focus:bg-white focus:ring-2 focus:ring-red-500">
+                    </div>
+                </div>
+                <div>
+                    <label class="block font-bold text-xs text-gray-700 uppercase mb-1">Mô tả chi tiết đề bài:</label>
+                    <textarea id="probDesc" rows="4" required placeholder="Nội dung đề bài..." class="w-full border p-3 rounded-xl outline-none bg-gray-50 focus:bg-white focus:ring-2 focus:ring-red-500"></textarea>
+                </div>
+
+                <!-- KHU VỰC THÊM TEST CASE -->
+                <div class="border-t pt-4 space-y-3">
+                    <div class="flex justify-between items-center">
+                        <label class="block font-bold text-xs text-gray-700 uppercase"><i class="fa-solid fa-vials text-red-600 mr-1"></i> Bộ Test Cases Chấm bài:</label>
+                        <button type="button" onclick="addTestCaseRow()" class="bg-blue-600 text-white px-3 py-1.5 rounded-lg text-xs font-bold hover:bg-blue-700 transition"><i class="fa-solid fa-plus mr-1"></i> Thêm Test Case</button>
+                    </div>
+                    <div id="testCasesContainer" class="space-y-3 max-h-60 overflow-y-auto p-2 bg-gray-50 rounded-xl border">
+                        <!-- Dynamic rows -->
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full bg-red-600 text-white py-3 rounded-xl font-bold hover:bg-red-700 shadow mt-4">Lưu bài tập</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL THÊM KỲ THI -->
+    <div id="contestModal" class="fixed inset-0 bg-black/50 hidden justify-center items-center z-50">
+        <div class="bg-white w-[500px] rounded-2xl shadow-2xl p-8 space-y-4">
+            <div class="flex justify-between items-center border-b pb-4">
+                <h3 class="font-extrabold text-xl text-red-600">Tạo kỳ thi mới</h3>
+                <button onclick="closeContestModal()" class="text-gray-400 hover:text-black"><i class="fa-solid fa-xmark text-xl"></i></button>
+            </div>
+            <form onsubmit="handleContestSubmit(event)" class="space-y-4 text-sm">
+                <div>
+                    <label class="block font-bold text-xs text-gray-700 uppercase mb-1">Tên kỳ thi:</label>
+                    <input type="text" id="contestTitle" required placeholder="VD: HUYOJ Round 1..." class="w-full border p-3 rounded-xl outline-none bg-gray-50 focus:bg-white focus:ring-2 focus:ring-red-500">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block font-bold text-xs text-gray-700 uppercase mb-1">Thời gian bắt đầu:</label>
+                        <input type="text" id="contestStart" required placeholder="VD: 20:00 28/07/2026" class="w-full border p-3 rounded-xl outline-none bg-gray-50 focus:bg-white focus:ring-2 focus:ring-red-500">
+                    </div>
+                    <div>
+                        <label class="block font-bold text-xs text-gray-700 uppercase mb-1">Thời gian kết thúc:</label>
+                        <input type="text" id="contestEnd" required placeholder="VD: 22:00 28/07/2026" class="w-full border p-3 rounded-xl outline-none bg-gray-50 focus:bg-white focus:ring-2 focus:ring-red-500">
+                    </div>
+                </div>
+                <div>
+                    <label class="block font-bold text-xs text-gray-700 uppercase mb-1">Mô tả kỳ thi:</label>
+                    <textarea id="contestDesc" rows="3" placeholder="Thông tin chi tiết kỳ thi..." class="w-full border p-3 rounded-xl outline-none bg-gray-50 focus:bg-white focus:ring-2 focus:ring-red-500"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-red-600 text-white py-3 rounded-xl font-bold hover:bg-red-700 shadow">Tạo kỳ thi</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL THÊM TIN TỨC -->
+    <div id="newsModal" class="fixed inset-0 bg-black/50 hidden justify-center items-center z-50">
+        <div class="bg-white w-[500px] rounded-2xl shadow-2xl p-8 space-y-4">
+            <div class="flex justify-between items-center border-b pb-4">
+                <h3 class="font-extrabold text-xl text-red-600">Đăng tin tức mới</h3>
+                <button onclick="closeNewsModal()" class="text-gray-400 hover:text-black"><i class="fa-solid fa-xmark text-xl"></i></button>
+            </div>
+            <form onsubmit="handleNewsSubmit(event)" class="space-y-4 text-sm">
+                <div>
+                    <label class="block font-bold text-xs text-gray-700 uppercase mb-1">Tiêu đề thông báo:</label>
+                    <input type="text" id="newsTitle" required placeholder="Tiêu đề..." class="w-full border p-3 rounded-xl outline-none bg-gray-50 focus:bg-white focus:ring-2 focus:ring-red-500">
+                </div>
+                <div>
+                    <label class="block font-bold text-xs text-gray-700 uppercase mb-1">Nội dung chi tiết:</label>
+                    <textarea id="newsContent" rows="4" required placeholder="Nội dung thông báo..." class="w-full border p-3 rounded-xl outline-none bg-gray-50 focus:bg-white focus:ring-2 focus:ring-red-500"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-red-600 text-white py-3 rounded-xl font-bold hover:bg-red-700 shadow">Đăng thông báo</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- FOOTER CÓ CHÈN LINK HTML THEO YÊU CẦU -->
+    <footer class="bg-white border-t py-6 text-center text-xs text-gray-500 mt-12 space-y-1">
+        <div>HUYOJ Admin Panel &copy; 2026.</div>
+        <div>Hệ thống quản trị tối ưu trải nghiệm | <a href="user.html" target="_blank" rel="noopener" class="text-red-600 font-bold hover:underline">Mở trang User tại tab mới</a></div>
+    </footer>
+
+    <script>
+        function checkAdminAuth() {
+            const currentUser = localStorage.getItem('vnoi_current_user');
+            const users = JSON.parse(localStorage.getItem('vnoi_users')) || [];
+            const user = users.find(u => u.username === currentUser);
+            if (!user || user.role !== 'admin') {
+                alert('Bạn không có quyền truy cập trang quản trị!');
+                window.location.href = 'user.html';
+            }
+        }
+        checkAdminAuth();
+
+        if (!localStorage.getItem('vnoi_problems')) {
+            localStorage.setItem('vnoi_problems', JSON.stringify([
+                { 
+                    id: 1, code: 'SUMA', title: 'Tổng hai số nguyên A và B', difficulty: 'Dễ', tags: ['Math'], 
+                    desc: 'Nhập vào hai số nguyên a và b. In ra tổng của chúng.',
+                    testCases: [{ input: '3 5', output: '8' }, { input: '10 20', output: '30' }]
+                },
+                { 
+                    id: 2, code: 'HELLOP', title: 'Xin chào HUYOJ', difficulty: 'Dễ', tags: ['Implementation'], 
+                    desc: 'In ra dòng chữ "Hello HUYOJ".',
+                    testCases: [{ input: '', output: 'Hello HUYOJ' }]
+                }
+            ]));
+        }
+        if (!localStorage.getItem('vnoi_contests')) {
+            localStorage.setItem('vnoi_contests', JSON.stringify([
+                { id: 1, title: 'HUYOJ Opening Contest', startTime: '20:00 30/07/2026', endTime: '22:00 30/07/2026', desc: 'Kỳ thi thử nghiệm đầu tiên chào mừng hệ thống ra mắt.' }
+            ]));
+        }
+
+        function switchAdminTab(tabName) {
+            document.querySelectorAll('.admin-section').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.nav-link').forEach(el => el.classList.remove('active'));
+            document.getElementById('admin-' + tabName).classList.add('active');
+            document.getElementById('nav-' + tabName).classList.add('active');
+
+            if(tabName === 'problems') renderAdminProblems();
+            if(tabName === 'contests') renderAdminContests();
+            if(tabName === 'news') renderAdminNews();
+            if(tabName === 'users') renderAdminUsers();
+        }
+
+        function renderAdminProblems() {
+            const problems = JSON.parse(localStorage.getItem('vnoi_problems')) || [];
+            document.getElementById('adminProblemsTableBody').innerHTML = problems.length > 0 ? problems.map(p => `
+                <tr class="border-b hover:bg-gray-50 transition">
+                    <td class="p-4 font-mono font-bold text-blue-600">${p.code}</td>
+                    <td class="p-4 font-bold text-gray-800">${p.title}</td>
+                    <td class="p-4 font-bold text-green-600">${p.difficulty}</td>
+                    <td class="p-4 text-center space-x-2">
+                        <button onclick="editProblem(${p.id})" class="bg-blue-100 text-blue-700 px-3 py-1.5 rounded-lg text-xs font-bold hover:bg-blue-200 transition">Sửa</button>
+                        <button onclick="deleteProblem(${p.id})" class="bg-red-100 text-red-700 px-3 py-1.5 rounded-lg text-xs font-bold hover:bg-red-200 transition">Xóa</button>
+                    </td>
+                </tr>
+            `).join('') : `<tr><td colspan="4" class="p-6 text-center text-gray-400">Chưa có bài tập nào.</td></tr>`;
+        }
+
+        function addTestCaseRow(inputVal = '', outputVal = '') {
+            const container = document.getElementById('testCasesContainer');
+            const div = document.createElement('div');
+            div.className = 'flex items-center space-x-2 bg-white p-3 rounded-xl border shadow-sm test-case-row';
+            div.innerHTML = `
+                <div class="flex-grow space-y-1">
+                    <input type="text" placeholder="Input (Đầu vào)..." value="${inputVal}" class="tc-input w-full border p-2 rounded-lg text-xs font-mono bg-gray-50 focus:bg-white outline-none">
+                    <input type="text" placeholder="Expected Output (Đầu ra mong đợi)..." value="${outputVal}" class="tc-output w-full border p-2 rounded-lg text-xs font-mono bg-gray-50 focus:bg-white outline-none">
+                </div>
+                <button type="button" onclick="this.parentElement.remove()" class="text-red-500 hover:text-red-700 p-2 font-bold"><i class="fa-solid fa-trash"></i></button>
+            `;
+            container.appendChild(div);
+        }
+
+        function openProblemModal(id = null) {
+            document.getElementById('probEditId').value = '';
+            document.getElementById('probCode').value = '';
+            document.getElementById('probTitle').value = '';
+            document.getElementById('probDiff').value = 'Dễ';
+            document.getElementById('probTags').value = '';
+            document.getElementById('probDesc').value = '';
+            document.getElementById('testCasesContainer').innerHTML = '';
+            document.getElementById('problemModalTitle').innerText = 'Thêm bài tập mới';
+
+            if (id) {
+                const problems = JSON.parse(localStorage.getItem('vnoi_problems')) || [];
+                const p = problems.find(x => x.id === id);
+                if (p) {
+                    document.getElementById('probEditId').value = p.id;
+                    document.getElementById('probCode').value = p.code;
+                    document.getElementById('probTitle').value = p.title;
+                    document.getElementById('probDiff').value = p.difficulty;
+                    document.getElementById('probTags').value = (p.tags || []).join(', ');
+                    document.getElementById('probDesc').value = p.desc;
+                    document.getElementById('problemModalTitle').innerText = 'Chỉnh sửa bài tập';
+
+                    if (p.testCases && p.testCases.length > 0) {
+                        p.testCases.forEach(tc => addTestCaseRow(tc.input, tc.output));
+                    }
+                }
+            } else {
+                addTestCaseRow();
+            }
+
+            document.getElementById('problemModal').classList.remove('hidden');
+            document.getElementById('problemModal').classList.add('flex');
+        }
+
+        function closeProblemModal() {
+            document.getElementById('problemModal').classList.add('hidden');
+        }
+
+        function editProblem(id) {
+            openProblemModal(id);
+        }
+
+        function handleProblemSubmit(e) {
+            e.preventDefault();
+            const editId = document.getElementById('probEditId').value;
+            const code = document.getElementById('probCode').value.trim().toUpperCase();
+            const title = document.getElementById('probTitle').value.trim();
+            const difficulty = document.getElementById('probDiff').value;
+            const tags = document.getElementById('probTags').value.split(',').map(t => t.trim()).filter(t => t);
+            const desc = document.getElementById('probDesc').value.trim();
+
+            let testCases = [];
+            const rows = document.querySelectorAll('.test-case-row');
+            rows.forEach(r => {
+                const input = r.querySelector('.tc-input').value.trim();
+                const output = r.querySelector('.tc-output').value.trim();
+                if (output) {
+                    testCases.push({ input, output });
+                }
+            });
+
+            if (testCases.length === 0) {
+                alert('Vui lòng thêm ít nhất 1 Test Case hợp lệ (có Output)!');
+                return;
+            }
+
+            let problems = JSON.parse(localStorage.getItem('vnoi_problems')) || [];
+
+            if (editId) {
+                let p = problems.find(x => x.id == editId);
+                if (p) {
+                    p.code = code;
+                    p.title = title;
+                    p.difficulty = difficulty;
+                    p.tags = tags;
+                    p.desc = desc;
+                    p.testCases = testCases;
+                }
+            } else {
+                const newId = problems.length > 0 ? Math.max(...problems.map(x => x.id)) + 1 : 1;
+                problems.push({ id: newId, code, title, difficulty, tags, desc, testCases });
+            }
+
+            localStorage.setItem('vnoi_problems', JSON.stringify(problems));
+            closeProblemModal();
+            renderAdminProblems();
+        }
+
+        function deleteProblem(id) {
+            if (confirm('Bạn có chắc muốn xóa bài tập này?')) {
+                let problems = JSON.parse(localStorage.getItem('vnoi_problems')) || [];
+                problems = problems.filter(x => x.id !== id);
+                localStorage.setItem('vnoi_problems', JSON.stringify(problems));
+                renderAdminProblems();
+            }
+        }
+
+        function renderAdminContests() {
+            const contests = JSON.parse(localStorage.getItem('vnoi_contests')) || [];
+            document.getElementById('adminContestsList').innerHTML = contests.length > 0 ? contests.map(c => `
+                <div class="bg-white border rounded-xl p-6 shadow-sm space-y-3">
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-extrabold text-lg text-gray-900">${c.title}</h3>
+                        <button onclick="deleteContest(${c.id})" class="text-red-500 hover:text-red-700 text-xs font-bold"><i class="fa-solid fa-trash"></i> Xóa</button>
+                    </div>
+                    <p class="text-xs text-gray-500"><i class="fa-solid fa-calendar mr-1"></i> ${c.startTime} - ${c.endTime}</p>
+                    <p class="text-sm text-gray-700">${c.desc || 'Không có mô tả.'}</p>
+                </div>
+            `).join('') : '<div class="text-gray-400 text-center col-span-2 py-8">Chưa có kỳ thi nào.</div>';
+        }
+
+        function openContestModal() {
+            document.getElementById('contestTitle').value = '';
+            document.getElementById('contestStart').value = '';
+            document.getElementById('contestEnd').value = '';
+            document.getElementById('contestDesc').value = '';
+            document.getElementById('contestModal').classList.remove('hidden');
+            document.getElementById('contestModal').classList.add('flex');
+        }
+
+        function closeContestModal() {
+            document.getElementById('contestModal').classList.add('hidden');
+        }
+
+        function handleContestSubmit(e) {
+            e.preventDefault();
+            const title = document.getElementById('contestTitle').value.trim();
+            const startTime = document.getElementById('contestStart').value.trim();
+            const endTime = document.getElementById('contestEnd').value.trim();
+            const desc = document.getElementById('contestDesc').value.trim();
+
+            let contests = JSON.parse(localStorage.getItem('vnoi_contests')) || [];
+            const newId = contests.length > 0 ? Math.max(...contests.map(x => x.id)) + 1 : 1;
+            contests.push({ id: newId, title, startTime, endTime, desc });
+            localStorage.setItem('vnoi_contests', JSON.stringify(contests));
+            closeContestModal();
+            renderAdminContests();
+        }
+
+        function deleteContest(id) {
+            if (confirm('Bạn có chắc muốn xóa kỳ thi này?')) {
+                let contests = JSON.parse(localStorage.getItem('vnoi_contests')) || [];
+                contests = contests.filter(x => x.id !== id);
+                localStorage.setItem('vnoi_contests', JSON.stringify(contests));
+                renderAdminContests();
+            }
+        }
+
+        function renderAdminNews() {
+            const newsList = JSON.parse(localStorage.getItem('vnoi_news')) || [];
+            document.getElementById('adminNewsList').innerHTML = newsList.length > 0 ? newsList.map(n => `
+                <div class="bg-white border rounded-xl p-6 shadow-sm space-y-2">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-extrabold text-base text-gray-900"><i class="fa-solid fa-circle-info text-red-600 mr-2"></i>${n.title}</h3>
+                        <div class="space-x-3">
+                            <span class="text-xs font-bold text-gray-400">${n.date}</span>
+                            <button onclick="deleteNews(${n.id})" class="text-red-500 hover:text-red-700 text-xs font-bold"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-700 whitespace-pre-line pl-6">${n.content}</p>
+                </div>
+            `).join('') : '<div class="text-gray-400 text-center py-8">Chưa có thông báo nào.</div>';
+        }
+
+        function openNewsModal() {
+            document.getElementById('newsTitle').value = '';
+            document.getElementById('newsContent').value = '';
+            document.getElementById('newsModal').classList.remove('hidden');
+            document.getElementById('newsModal').classList.add('flex');
+        }
+
+        function closeNewsModal() {
+            document.getElementById('newsModal').classList.add('hidden');
+        }
+
+        function handleNewsSubmit(e) {
+            e.preventDefault();
+            const title = document.getElementById('newsTitle').value.trim();
+            const content = document.getElementById('newsContent').value.trim();
+            const date = new Date().toLocaleDateString();
+
+            let newsList = JSON.parse(localStorage.getItem('vnoi_news')) || [];
+            const newId = newsList.length > 0 ? Math.max(...newsList.map(x => x.id)) + 1 : 1;
+            newsList.unshift({ id: newId, title, content, date });
+            localStorage.setItem('vnoi_news', JSON.stringify(newsList));
+            closeNewsModal();
+            renderAdminNews();
+        }
+
+        function deleteNews(id) {
+            if (confirm('Bạn có chắc muốn xóa thông báo này?')) {
+                let newsList = JSON.parse(localStorage.getItem('vnoi_news')) || [];
+                newsList = newsList.filter(x => x.id !== id);
+                localStorage.setItem('vnoi_news', JSON.stringify(newsList));
+                renderAdminNews();
+            }
+        }
+
+        function renderAdminUsers() {
+            const users = JSON.parse(localStorage.getItem('vnoi_users')) || [];
+            const currentUser = localStorage.getItem('vnoi_current_user');
+
+            document.getElementById('adminUsersTableBody').innerHTML = users.length > 0 ? users.map(u => {
+                const uRating = (u.rating !== undefined) ? u.rating : 0;
+                const isLocked = u.status === 'Bị khóa';
+                return `
+                    <tr class="border-b hover:bg-gray-50 transition">
+                        <td class="p-4 font-bold text-gray-800">${u.username} ${u.username === currentUser ? '<span class="text-xs text-blue-600 font-normal">(Bạn)</span>' : ''}</td>
+                        <td class="p-4 text-xs font-bold ${u.role === 'admin' ? 'text-red-600' : 'text-blue-600'}">${u.role.toUpperCase()}</td>
+                        <td class="p-4 text-center font-mono font-bold text-purple-700">${uRating}</td>
+                        <td class="p-4 text-center font-bold ${isLocked ? 'text-red-600' : 'text-green-600'}">${u.status || 'Hoạt động'}</td>
+                        <td class="p-4 text-center space-x-2">
+                            <button onclick="toggleLockUser('${u.username}')" class="px-3 py-1.5 rounded-lg text-xs font-bold ${isLocked ? 'bg-green-600 text-white hover:bg-green-700' : 'bg-orange-500 text-white hover:bg-orange-600'} transition">
+                                ${isLocked ? 'Mở khóa' : 'Khóa'}
+                            </button>
+                            <button onclick="deleteUser('${u.username}')" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-red-600 text-white hover:bg-red-700 transition">
+                                Xóa
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            }).join('') : `<tr><td colspan="5" class="p-6 text-center text-gray-400">Không có thành viên nào.</td></tr>`;
+        }
+
+        function toggleLockUser(username) {
+            let users = JSON.parse(localStorage.getItem('vnoi_users')) || [];
+            let u = users.find(x => x.username === username);
+            if (u) {
+                if (u.role === 'admin' && username === localStorage.getItem('vnoi_current_user')) {
+                    alert('Không thể khóa tài khoản của chính mình!');
+                    return;
+                }
+                u.status = (u.status === 'Bị khóa') ? 'Hoạt động' : 'Bị khóa';
+                localStorage.setItem('vnoi_users', JSON.stringify(users));
+                renderAdminUsers();
+            }
+        }
+
+        function deleteUser(username) {
+            const currentUser = localStorage.getItem('vnoi_current_user');
+            if (username === currentUser) {
+                alert('Bạn không thể xóa tài khoản của chính mình đang đăng nhập!');
+                return;
+            }
+
+            let users = JSON.parse(localStorage.getItem('vnoi_users')) || [];
+            let targetUser = users.find(x => x.username === username);
+
+            if (targetUser && targetUser.role === 'admin') {
+                alert('Không thể xóa tài khoản quản trị viên khác!');
+                return;
+            }
+
+            if (confirm(`Bạn có chắc chắn muốn xóa vĩnh viễn tài khoản "${username}" không?`)) {
+                users = users.filter(x => x.username !== username);
+                localStorage.setItem('vnoi_users', JSON.stringify(users));
+
+                let subs = JSON.parse(localStorage.getItem('vnoi_submissions')) || [];
+                subs = subs.filter(s => s.username !== username);
+                localStorage.setItem('vnoi_submissions', JSON.stringify(subs));
+
+                renderAdminUsers();
+                alert(`Đã xóa thành công tài khoản "${username}"!`);
+            }
+        }
+
+        renderAdminProblems();
+    </script>
+</body>
+</html>
