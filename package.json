@@ -1,5 +1,4 @@
-{
-  "devDependencies": {
-    "@tailwindcss/oxide-linux-x64-gnu": "^4.3.3"
-  }
+"scripts": {
+  "start": "node index.js",
+  "dev": "node index.js"
 }
