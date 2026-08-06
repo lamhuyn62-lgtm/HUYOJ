@@ -1,0 +1,22 @@
+0 verbose cli /usr/bin/node /usr/lib/node_modules/npm/bin/npm-cli.js
+1 info using npm@10.8.2
+2 info using node@v20.20.2
+3 silly config load:file:/usr/lib/node_modules/npm/npmrc
+4 silly config load:file:/home/lamhuy/HuyOJ/HuyOJ/tmath/.npmrc
+5 silly config load:file:/root/.npmrc
+6 silly config load:file:/usr/etc/npmrc
+7 verbose title npm exec @tailwindcss/cli -i resources/main.css -o resources/full_style.css
+8 verbose argv "exec" "--" "@tailwindcss/cli" "-i" "resources/main.css" "-o" "resources/full_style.css"
+9 verbose logfile logs-max:10 dir:/root/.npm/_logs/2026-08-05T15_59_04_527Z-
+10 verbose logfile /root/.npm/_logs/2026-08-05T15_59_04_527Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:2197815296 maxSize:549453824 maxEntrySize:274726912
+13 http fetch GET 200 https://registry.npmjs.org/@tailwindcss%2fcli 680ms (cache revalidated)
+14 silly packumentCache heap:2197815296 maxSize:549453824 maxEntrySize:274726912
+15 silly packumentCache heap:2197815296 maxSize:549453824 maxEntrySize:274726912
+16 verbose cwd /home/lamhuy/HuyOJ/HuyOJ/tmath
+17 verbose os Linux 5.15.146.1-microsoft-standard-WSL2
+18 verbose node v20.20.2
+19 verbose npm  v10.8.2
+20 verbose exit 1
+21 verbose code 1

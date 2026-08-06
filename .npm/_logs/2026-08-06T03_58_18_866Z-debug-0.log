@@ -1,0 +1,251 @@
+0 verbose cli /usr/bin/node /usr/bin/npm
+1 info using npm@10.8.2
+2 info using node@v20.20.2
+3 silly config load:file:/usr/lib/node_modules/npm/npmrc
+4 silly config load:file:/home/lamhuy/dmoj-docker/tmath/.npmrc
+5 silly config load:file:/root/.npmrc
+6 silly config load:file:/usr/etc/npmrc
+7 verbose title npm install
+8 verbose argv "install"
+9 verbose logfile logs-max:10 dir:/root/.npm/_logs/2026-08-06T03_58_18_866Z-
+10 verbose logfile /root/.npm/_logs/2026-08-06T03_58_18_866Z-debug-0.log
+11 silly packumentCache heap:2197815296 maxSize:549453824 maxEntrySize:274726912
+12 silly logfile start cleaning logs, removing 1 files
+13 silly idealTree buildDeps
+14 silly logfile done cleaning log files
+15 silly reify moves {}
+16 verbose reify failed optional dependency /home/lamhuy/dmoj-docker/tmath/node_modules/@tailwindcss/oxide-wasm32-wasi
+17 silly reify mark deleted [
+17 silly reify   '/home/lamhuy/dmoj-docker/tmath/node_modules/@tailwindcss/oxide-wasm32-wasi'
+17 silly reify ]
+18 silly audit bulk request {
+18 silly audit   '@jridgewell/gen-mapping': [ '0.3.13' ],
+18 silly audit   '@jridgewell/remapping': [ '2.3.5' ],
+18 silly audit   '@jridgewell/resolve-uri': [ '3.1.2' ],
+18 silly audit   '@jridgewell/sourcemap-codec': [ '1.5.5' ],
+18 silly audit   '@jridgewell/trace-mapping': [ '0.3.31' ],
+18 silly audit   '@parcel/watcher': [ '2.5.6' ],
+18 silly audit   '@parcel/watcher-android-arm64': [ '2.5.6' ],
+18 silly audit   '@parcel/watcher-darwin-arm64': [ '2.5.6' ],
+18 silly audit   '@parcel/watcher-darwin-x64': [ '2.5.6' ],
+18 silly audit   '@parcel/watcher-freebsd-x64': [ '2.5.6' ],
+18 silly audit   '@parcel/watcher-linux-arm-glibc': [ '2.5.6' ],
+18 silly audit   '@parcel/watcher-linux-arm-musl': [ '2.5.6' ],
+18 silly audit   '@parcel/watcher-linux-arm64-glibc': [ '2.5.6' ],
+18 silly audit   '@parcel/watcher-linux-arm64-musl': [ '2.5.6' ],
+18 silly audit   '@parcel/watcher-linux-x64-glibc': [ '2.5.6' ],
+18 silly audit   '@parcel/watcher-linux-x64-musl': [ '2.5.6' ],
+18 silly audit   '@parcel/watcher-win32-arm64': [ '2.5.6' ],
+18 silly audit   '@parcel/watcher-win32-ia32': [ '2.5.6' ],
+18 silly audit   '@parcel/watcher-win32-x64': [ '2.5.6' ],
+18 silly audit   '@tailwindcss/cli': [ '4.2.2' ],
+18 silly audit   '@tailwindcss/forms': [ '0.5.11' ],
+18 silly audit   '@tailwindcss/node': [ '4.2.2' ],
+18 silly audit   '@tailwindcss/oxide': [ '4.2.2' ],
+18 silly audit   '@tailwindcss/oxide-android-arm64': [ '4.2.2' ],
+18 silly audit   '@tailwindcss/oxide-darwin-arm64': [ '4.2.2' ],
+18 silly audit   '@tailwindcss/oxide-darwin-x64': [ '4.2.2' ],
+18 silly audit   '@tailwindcss/oxide-freebsd-x64': [ '4.2.2' ],
+18 silly audit   '@tailwindcss/oxide-linux-arm-gnueabihf': [ '4.2.2' ],
+18 silly audit   '@tailwindcss/oxide-linux-arm64-gnu': [ '4.2.2' ],
+18 silly audit   '@tailwindcss/oxide-linux-arm64-musl': [ '4.2.2' ],
+18 silly audit   '@tailwindcss/oxide-linux-x64-gnu': [ '4.2.2' ],
+18 silly audit   '@tailwindcss/oxide-linux-x64-musl': [ '4.2.2' ],
+18 silly audit   '@tailwindcss/oxide-win32-arm64-msvc': [ '4.2.2' ],
+18 silly audit   '@tailwindcss/oxide-win32-x64-msvc': [ '4.2.2' ],
+18 silly audit   '@tailwindcss/typography': [ '0.5.19' ],
+18 silly audit   cssesc: [ '3.0.0' ],
+18 silly audit   'detect-libc': [ '2.1.2' ],
+18 silly audit   'enhanced-resolve': [ '5.20.1' ],
+18 silly audit   'graceful-fs': [ '4.2.11' ],
+18 silly audit   'is-extglob': [ '2.1.1' ],
+18 silly audit   'is-glob': [ '4.0.3' ],
+18 silly audit   jiti: [ '2.6.1' ],
+18 silly audit   lightningcss: [ '1.32.0' ],
+18 silly audit   'lightningcss-android-arm64': [ '1.32.0' ],
+18 silly audit   'lightningcss-darwin-arm64': [ '1.32.0' ],
+18 silly audit   'lightningcss-darwin-x64': [ '1.32.0' ],
+18 silly audit   'lightningcss-freebsd-x64': [ '1.32.0' ],
+18 silly audit   'lightningcss-linux-arm-gnueabihf': [ '1.32.0' ],
+18 silly audit   'lightningcss-linux-arm64-gnu': [ '1.32.0' ],
+18 silly audit   'lightningcss-linux-arm64-musl': [ '1.32.0' ],
+18 silly audit   'lightningcss-linux-x64-gnu': [ '1.32.0' ],
+18 silly audit   'lightningcss-linux-x64-musl': [ '1.32.0' ],
+18 silly audit   'lightningcss-win32-arm64-msvc': [ '1.32.0' ],
+18 silly audit   'lightningcss-win32-x64-msvc': [ '1.32.0' ],
+18 silly audit   'magic-string': [ '0.30.21' ],
+18 silly audit   'mini-svg-data-uri': [ '1.4.4' ],
+18 silly audit   mri: [ '1.2.0' ],
+18 silly audit   'node-addon-api': [ '7.1.1' ],
+18 silly audit   picocolors: [ '1.1.1' ],
+18 silly audit   picomatch: [ '4.0.4' ],
+18 silly audit   'postcss-selector-parser': [ '6.0.10' ],
+18 silly audit   'source-map-js': [ '1.2.1' ],
+18 silly audit   tailwindcss: [ '4.2.2' ],
+18 silly audit   tapable: [ '2.3.2' ],
+18 silly audit   'util-deprecate': [ '1.0.2' ],
+18 silly audit   '@tailwindcss/oxide-wasm32-wasi': [ '4.2.2' ]
+18 silly audit }
+19 verbose reify failed optional dependency /home/lamhuy/dmoj-docker/tmath/node_modules/lightningcss-win32-x64-msvc
+20 silly reify mark deleted [
+20 silly reify   '/home/lamhuy/dmoj-docker/tmath/node_modules/lightningcss-win32-x64-msvc'
+20 silly reify ]
+21 verbose reify failed optional dependency /home/lamhuy/dmoj-docker/tmath/node_modules/lightningcss-win32-arm64-msvc
+22 silly reify mark deleted [
+22 silly reify   '/home/lamhuy/dmoj-docker/tmath/node_modules/lightningcss-win32-arm64-msvc'
+22 silly reify ]
+23 verbose reify failed optional dependency /home/lamhuy/dmoj-docker/tmath/node_modules/lightningcss-linux-arm64-musl
+24 silly reify mark deleted [
+24 silly reify   '/home/lamhuy/dmoj-docker/tmath/node_modules/lightningcss-linux-arm64-musl'
+24 silly reify ]
+25 verbose reify failed optional dependency /home/lamhuy/dmoj-docker/tmath/node_modules/lightningcss-linux-arm64-gnu
+26 silly reify mark deleted [
+26 silly reify   '/home/lamhuy/dmoj-docker/tmath/node_modules/lightningcss-linux-arm64-gnu'
+26 silly reify ]
+27 verbose reify failed optional dependency /home/lamhuy/dmoj-docker/tmath/node_modules/lightningcss-linux-arm-gnueabihf
+28 silly reify mark deleted [
+28 silly reify   '/home/lamhuy/dmoj-docker/tmath/node_modules/lightningcss-linux-arm-gnueabihf'
+28 silly reify ]
+29 verbose reify failed optional dependency /home/lamhuy/dmoj-docker/tmath/node_modules/lightningcss-freebsd-x64
+30 silly reify mark deleted [
+30 silly reify   '/home/lamhuy/dmoj-docker/tmath/node_modules/lightningcss-freebsd-x64'
+30 silly reify ]
+31 verbose reify failed optional dependency /home/lamhuy/dmoj-docker/tmath/node_modules/lightningcss-darwin-x64
+32 silly reify mark deleted [
+32 silly reify   '/home/lamhuy/dmoj-docker/tmath/node_modules/lightningcss-darwin-x64'
+32 silly reify ]
+33 verbose reify failed optional dependency /home/lamhuy/dmoj-docker/tmath/node_modules/lightningcss-darwin-arm64
+34 silly reify mark deleted [
+34 silly reify   '/home/lamhuy/dmoj-docker/tmath/node_modules/lightningcss-darwin-arm64'
+34 silly reify ]
+35 verbose reify failed optional dependency /home/lamhuy/dmoj-docker/tmath/node_modules/lightningcss-android-arm64
+36 silly reify mark deleted [
+36 silly reify   '/home/lamhuy/dmoj-docker/tmath/node_modules/lightningcss-android-arm64'
+36 silly reify ]
+37 verbose reify failed optional dependency /home/lamhuy/dmoj-docker/tmath/node_modules/@tailwindcss/oxide-win32-x64-msvc
+38 silly reify mark deleted [
+38 silly reify   '/home/lamhuy/dmoj-docker/tmath/node_modules/@tailwindcss/oxide-win32-x64-msvc'
+38 silly reify ]
+39 verbose reify failed optional dependency /home/lamhuy/dmoj-docker/tmath/node_modules/@tailwindcss/oxide-win32-arm64-msvc
+40 silly reify mark deleted [
+40 silly reify   '/home/lamhuy/dmoj-docker/tmath/node_modules/@tailwindcss/oxide-win32-arm64-msvc'
+40 silly reify ]
+41 verbose reify failed optional dependency /home/lamhuy/dmoj-docker/tmath/node_modules/@tailwindcss/oxide-linux-arm64-musl
+42 silly reify mark deleted [
+42 silly reify   '/home/lamhuy/dmoj-docker/tmath/node_modules/@tailwindcss/oxide-linux-arm64-musl'
+42 silly reify ]
+43 verbose reify failed optional dependency /home/lamhuy/dmoj-docker/tmath/node_modules/@tailwindcss/oxide-linux-arm64-gnu
+44 silly reify mark deleted [
+44 silly reify   '/home/lamhuy/dmoj-docker/tmath/node_modules/@tailwindcss/oxide-linux-arm64-gnu'
+44 silly reify ]
+45 verbose reify failed optional dependency /home/lamhuy/dmoj-docker/tmath/node_modules/@tailwindcss/oxide-linux-arm-gnueabihf
+46 silly reify mark deleted [
+46 silly reify   '/home/lamhuy/dmoj-docker/tmath/node_modules/@tailwindcss/oxide-linux-arm-gnueabihf'
+46 silly reify ]
+47 verbose reify failed optional dependency /home/lamhuy/dmoj-docker/tmath/node_modules/@tailwindcss/oxide-freebsd-x64
+48 silly reify mark deleted [
+48 silly reify   '/home/lamhuy/dmoj-docker/tmath/node_modules/@tailwindcss/oxide-freebsd-x64'
+48 silly reify ]
+49 verbose reify failed optional dependency /home/lamhuy/dmoj-docker/tmath/node_modules/@tailwindcss/oxide-darwin-x64
+50 silly reify mark deleted [
+50 silly reify   '/home/lamhuy/dmoj-docker/tmath/node_modules/@tailwindcss/oxide-darwin-x64'
+50 silly reify ]
+51 verbose reify failed optional dependency /home/lamhuy/dmoj-docker/tmath/node_modules/@tailwindcss/oxide-darwin-arm64
+52 silly reify mark deleted [
+52 silly reify   '/home/lamhuy/dmoj-docker/tmath/node_modules/@tailwindcss/oxide-darwin-arm64'
+52 silly reify ]
+53 verbose reify failed optional dependency /home/lamhuy/dmoj-docker/tmath/node_modules/@tailwindcss/oxide-android-arm64
+54 silly reify mark deleted [
+54 silly reify   '/home/lamhuy/dmoj-docker/tmath/node_modules/@tailwindcss/oxide-android-arm64'
+54 silly reify ]
+55 verbose reify failed optional dependency /home/lamhuy/dmoj-docker/tmath/node_modules/@parcel/watcher-win32-x64
+56 silly reify mark deleted [
+56 silly reify   '/home/lamhuy/dmoj-docker/tmath/node_modules/@parcel/watcher-win32-x64'
+56 silly reify ]
+57 verbose reify failed optional dependency /home/lamhuy/dmoj-docker/tmath/node_modules/@parcel/watcher-win32-ia32
+58 silly reify mark deleted [
+58 silly reify   '/home/lamhuy/dmoj-docker/tmath/node_modules/@parcel/watcher-win32-ia32'
+58 silly reify ]
+59 verbose reify failed optional dependency /home/lamhuy/dmoj-docker/tmath/node_modules/@parcel/watcher-win32-arm64
+60 silly reify mark deleted [
+60 silly reify   '/home/lamhuy/dmoj-docker/tmath/node_modules/@parcel/watcher-win32-arm64'
+60 silly reify ]
+61 verbose reify failed optional dependency /home/lamhuy/dmoj-docker/tmath/node_modules/@parcel/watcher-linux-arm64-musl
+62 silly reify mark deleted [
+62 silly reify   '/home/lamhuy/dmoj-docker/tmath/node_modules/@parcel/watcher-linux-arm64-musl'
+62 silly reify ]
+63 verbose reify failed optional dependency /home/lamhuy/dmoj-docker/tmath/node_modules/@parcel/watcher-linux-arm64-glibc
+64 silly reify mark deleted [
+64 silly reify   '/home/lamhuy/dmoj-docker/tmath/node_modules/@parcel/watcher-linux-arm64-glibc'
+64 silly reify ]
+65 verbose reify failed optional dependency /home/lamhuy/dmoj-docker/tmath/node_modules/@parcel/watcher-linux-arm-musl
+66 silly reify mark deleted [
+66 silly reify   '/home/lamhuy/dmoj-docker/tmath/node_modules/@parcel/watcher-linux-arm-musl'
+66 silly reify ]
+67 verbose reify failed optional dependency /home/lamhuy/dmoj-docker/tmath/node_modules/@parcel/watcher-linux-arm-glibc
+68 silly reify mark deleted [
+68 silly reify   '/home/lamhuy/dmoj-docker/tmath/node_modules/@parcel/watcher-linux-arm-glibc'
+68 silly reify ]
+69 verbose reify failed optional dependency /home/lamhuy/dmoj-docker/tmath/node_modules/@parcel/watcher-freebsd-x64
+70 silly reify mark deleted [
+70 silly reify   '/home/lamhuy/dmoj-docker/tmath/node_modules/@parcel/watcher-freebsd-x64'
+70 silly reify ]
+71 verbose reify failed optional dependency /home/lamhuy/dmoj-docker/tmath/node_modules/@parcel/watcher-darwin-x64
+72 silly reify mark deleted [
+72 silly reify   '/home/lamhuy/dmoj-docker/tmath/node_modules/@parcel/watcher-darwin-x64'
+72 silly reify ]
+73 verbose reify failed optional dependency /home/lamhuy/dmoj-docker/tmath/node_modules/@parcel/watcher-darwin-arm64
+74 silly reify mark deleted [
+74 silly reify   '/home/lamhuy/dmoj-docker/tmath/node_modules/@parcel/watcher-darwin-arm64'
+74 silly reify ]
+75 verbose reify failed optional dependency /home/lamhuy/dmoj-docker/tmath/node_modules/@parcel/watcher-android-arm64
+76 silly reify mark deleted [
+76 silly reify   '/home/lamhuy/dmoj-docker/tmath/node_modules/@parcel/watcher-android-arm64'
+76 silly reify ]
+77 silly tarball no local data for @tailwindcss/oxide-linux-x64-musl@https://registry.npmjs.org/@tailwindcss/oxide-linux-x64-musl/-/oxide-linux-x64-musl-4.2.2.tgz. Extracting by manifest.
+78 silly tarball no local data for @parcel/watcher-linux-x64-musl@https://registry.npmjs.org/@parcel/watcher-linux-x64-musl/-/watcher-linux-x64-musl-2.5.6.tgz. Extracting by manifest.
+79 silly tarball no local data for lightningcss-linux-x64-musl@https://registry.npmjs.org/lightningcss-linux-x64-musl/-/lightningcss-linux-x64-musl-1.32.0.tgz. Extracting by manifest.
+80 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 759ms
+81 silly audit report {}
+82 http fetch GET 200 https://registry.npmjs.org/@parcel/watcher-linux-x64-musl/-/watcher-linux-x64-musl-2.5.6.tgz 691ms (cache miss)
+83 http fetch GET 200 https://registry.npmjs.org/@tailwindcss/oxide-linux-x64-musl/-/oxide-linux-x64-musl-4.2.2.tgz 19468ms (cache miss)
+84 http fetch GET 200 https://registry.npmjs.org/lightningcss-linux-x64-musl/-/lightningcss-linux-x64-musl-1.32.0.tgz 1257ms (cache miss)
+85 silly ADD
+86 silly ADD
+87 silly ADD node_modules/lightningcss-linux-x64-musl
+88 silly ADD
+89 silly ADD
+90 silly ADD
+91 silly ADD
+92 silly ADD
+93 silly ADD
+94 silly ADD
+95 silly ADD
+96 silly ADD
+97 silly ADD
+98 silly ADD node_modules/@tailwindcss/oxide-linux-x64-musl
+99 silly ADD
+100 silly ADD
+101 silly ADD
+102 silly ADD
+103 silly ADD
+104 silly ADD
+105 silly ADD
+106 silly ADD
+107 silly ADD
+108 silly ADD
+109 silly ADD node_modules/@parcel/watcher-linux-x64-musl
+110 silly ADD
+111 silly ADD
+112 silly ADD
+113 silly ADD
+114 silly ADD
+115 silly ADD
+116 silly ADD
+117 silly ADD
+118 verbose cwd /home/lamhuy/dmoj-docker/tmath
+119 verbose os Linux 5.15.146.1-microsoft-standard-WSL2
+120 verbose node v20.20.2
+121 verbose npm  v10.8.2
+122 verbose exit 0
+123 info ok

@@ -1,0 +1,17 @@
+DATABASES = {
+gold
+path("2fa/s
+def users(request)
+def users(request):
+app.config_from_object('django.conf:settings', namespace='CELERY')
+Celery
+USE_TZ
+nginx:    ...    ports:
+nginx:
+uWSGI
+command: uwsgi
+site
+volumes
+
+
+

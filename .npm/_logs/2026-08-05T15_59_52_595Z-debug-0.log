@@ -1,0 +1,968 @@
+0 verbose cli /usr/bin/node /usr/bin/npm
+1 info using npm@10.8.2
+2 info using node@v20.20.2
+3 silly config load:file:/usr/lib/node_modules/npm/npmrc
+4 silly config load:file:/home/lamhuy/HuyOJ/HuyOJ/tmath/.npmrc
+5 silly config load:file:/root/.npmrc
+6 silly config load:file:/usr/etc/npmrc
+7 verbose title npm install tailwindcss @tailwindcss/cli
+8 verbose argv "install" "tailwindcss" "@tailwindcss/cli"
+9 verbose logfile logs-max:10 dir:/root/.npm/_logs/2026-08-05T15_59_52_595Z-
+10 verbose logfile /root/.npm/_logs/2026-08-05T15_59_52_595Z-debug-0.log
+11 silly packumentCache heap:2197815296 maxSize:549453824 maxEntrySize:274726912
+12 silly logfile done cleaning log files
+13 silly idealTree buildDeps
+14 silly fetch manifest @tailwindcss/cli@^4.2.2
+15 silly packumentCache full:https://registry.npmjs.org/@tailwindcss%2fcli cache-miss
+16 http fetch GET 200 https://registry.npmjs.org/@tailwindcss%2fcli 56ms (cache hit)
+17 silly packumentCache full:https://registry.npmjs.org/@tailwindcss%2fcli set size:2273270 disposed:false
+18 silly fetch manifest @tailwindcss/forms@^0.5.11
+19 silly packumentCache full:https://registry.npmjs.org/@tailwindcss%2fforms cache-miss
+20 http fetch GET 200 https://registry.npmjs.org/@tailwindcss%2fforms 13ms (cache hit)
+21 silly packumentCache full:https://registry.npmjs.org/@tailwindcss%2fforms set size:231950 disposed:false
+22 silly fetch manifest tailwindcss@^4.2.2
+23 silly packumentCache full:https://registry.npmjs.org/tailwindcss cache-miss
+24 http fetch GET 200 https://registry.npmjs.org/tailwindcss 70ms (cache hit)
+25 silly packumentCache full:https://registry.npmjs.org/tailwindcss set size:10820474 disposed:false
+26 silly fetch manifest @tailwindcss/typography@^0.5.19
+27 silly packumentCache full:https://registry.npmjs.org/@tailwindcss%2ftypography cache-miss
+28 http fetch GET 200 https://registry.npmjs.org/@tailwindcss%2ftypography 26ms (cache hit)
+29 silly packumentCache full:https://registry.npmjs.org/@tailwindcss%2ftypography set size:510615 disposed:false
+30 silly placeDep ROOT @tailwindcss/cli@4.3.3 REPLACE for:  want: ^4.2.2
+31 silly placeDep ROOT @tailwindcss/forms@0.5.11 REPLACE for:  want: ^0.5.11
+32 silly placeDep ROOT tailwindcss@4.3.3 OK for: @tailwindcss/forms@0.5.11 want: >=3.0.0 || >= 3.0.0-alpha.1 || >= 4.0.0-alpha.20 || >= 4.0.0-beta.1
+33 silly placeDep ROOT @tailwindcss/typography@0.5.20 REPLACE for:  want: ^0.5.19
+34 silly placeDep ROOT tailwindcss@4.3.3 REPLACE for:  want: ^4.2.2
+35 silly fetch manifest mri@^1.2.0
+36 silly packumentCache full:https://registry.npmjs.org/mri cache-miss
+37 silly fetch manifest picocolors@^1.1.1
+38 silly packumentCache full:https://registry.npmjs.org/picocolors cache-miss
+39 silly fetch manifest tailwindcss@4.3.3
+40 silly packumentCache full:https://registry.npmjs.org/tailwindcss cache-miss
+41 silly fetch manifest @parcel/watcher@2.5.1
+42 silly packumentCache full:https://registry.npmjs.org/@parcel%2fwatcher cache-miss
+43 silly fetch manifest enhanced-resolve@^5.24.1
+44 silly packumentCache full:https://registry.npmjs.org/enhanced-resolve cache-miss
+45 silly fetch manifest @tailwindcss/node@4.3.3
+46 silly packumentCache full:https://registry.npmjs.org/@tailwindcss%2fnode cache-miss
+47 silly fetch manifest @tailwindcss/oxide@4.3.3
+48 silly packumentCache full:https://registry.npmjs.org/@tailwindcss%2foxide cache-miss
+49 silly fetch manifest mini-svg-data-uri@^1.2.3
+50 silly packumentCache full:https://registry.npmjs.org/mini-svg-data-uri cache-miss
+51 silly fetch manifest postcss-selector-parser@6.0.10
+52 silly packumentCache full:https://registry.npmjs.org/postcss-selector-parser cache-miss
+53 http fetch GET 200 https://registry.npmjs.org/mri 53ms (cache hit)
+54 silly packumentCache full:https://registry.npmjs.org/mri set size:28195 disposed:false
+55 http fetch GET 200 https://registry.npmjs.org/picocolors 59ms (cache hit)
+56 silly packumentCache full:https://registry.npmjs.org/picocolors set size:16648 disposed:false
+57 http fetch GET 200 https://registry.npmjs.org/postcss-selector-parser 55ms (cache hit)
+58 silly packumentCache full:https://registry.npmjs.org/postcss-selector-parser set size:193966 disposed:false
+59 http fetch GET 200 https://registry.npmjs.org/@parcel%2fwatcher 69ms (cache hit)
+60 silly packumentCache full:https://registry.npmjs.org/@parcel%2fwatcher set size:124080 disposed:false
+61 http fetch GET 200 https://registry.npmjs.org/mini-svg-data-uri 70ms (cache hit)
+62 silly packumentCache full:https://registry.npmjs.org/mini-svg-data-uri set size:25574 disposed:false
+63 http fetch GET 200 https://registry.npmjs.org/enhanced-resolve 78ms (cache hit)
+64 silly packumentCache full:https://registry.npmjs.org/enhanced-resolve set size:482889 disposed:false
+65 http fetch GET 200 https://registry.npmjs.org/@tailwindcss%2fnode 97ms (cache hit)
+66 silly packumentCache full:https://registry.npmjs.org/@tailwindcss%2fnode set size:2325816 disposed:false
+67 http fetch GET 200 https://registry.npmjs.org/@tailwindcss%2foxide 159ms (cache hit)
+68 silly packumentCache full:https://registry.npmjs.org/@tailwindcss%2foxide set size:4704367 disposed:false
+69 http fetch GET 200 https://registry.npmjs.org/tailwindcss 275ms (cache hit)
+70 silly packumentCache full:https://registry.npmjs.org/tailwindcss set size:10820474 disposed:false
+71 silly placeDep ROOT @parcel/watcher@2.5.1 OK for: @tailwindcss/cli@4.3.3 want: 2.5.1
+72 silly placeDep ROOT @tailwindcss/node@4.3.3 OK for: @tailwindcss/cli@4.3.3 want: 4.3.3
+73 silly placeDep ROOT @tailwindcss/oxide@4.3.3 OK for: @tailwindcss/cli@4.3.3 want: 4.3.3
+74 silly placeDep ROOT enhanced-resolve@5.24.5 OK for: @tailwindcss/cli@4.3.3 want: ^5.24.1
+75 silly placeDep ROOT mri@1.2.0 OK for: @tailwindcss/cli@4.3.3 want: ^1.2.0
+76 silly placeDep ROOT picocolors@1.1.1 OK for: @tailwindcss/cli@4.3.3 want: ^1.1.1
+77 silly fetch manifest is-glob@^4.0.3
+78 silly packumentCache full:https://registry.npmjs.org/is-glob cache-miss
+79 silly fetch manifest micromatch@^4.0.5
+80 silly packumentCache full:https://registry.npmjs.org/micromatch cache-miss
+81 silly fetch manifest detect-libc@^1.0.3
+82 silly packumentCache full:https://registry.npmjs.org/detect-libc cache-miss
+83 silly fetch manifest node-addon-api@^7.0.0
+84 silly packumentCache full:https://registry.npmjs.org/node-addon-api cache-miss
+85 silly fetch manifest @parcel/watcher-win32-x64@2.5.1
+86 silly packumentCache full:https://registry.npmjs.org/@parcel%2fwatcher-win32-x64 cache-miss
+87 silly fetch manifest @parcel/watcher-darwin-x64@2.5.1
+88 silly packumentCache full:https://registry.npmjs.org/@parcel%2fwatcher-darwin-x64 cache-miss
+89 silly fetch manifest @parcel/watcher-win32-ia32@2.5.1
+90 silly packumentCache full:https://registry.npmjs.org/@parcel%2fwatcher-win32-ia32 cache-miss
+91 silly fetch manifest @parcel/watcher-freebsd-x64@2.5.1
+92 silly packumentCache full:https://registry.npmjs.org/@parcel%2fwatcher-freebsd-x64 cache-miss
+93 silly fetch manifest @parcel/watcher-win32-arm64@2.5.1
+94 silly packumentCache full:https://registry.npmjs.org/@parcel%2fwatcher-win32-arm64 cache-miss
+95 silly fetch manifest @parcel/watcher-darwin-arm64@2.5.1
+96 silly packumentCache full:https://registry.npmjs.org/@parcel%2fwatcher-darwin-arm64 cache-miss
+97 silly fetch manifest @parcel/watcher-android-arm64@2.5.1
+98 silly packumentCache full:https://registry.npmjs.org/@parcel%2fwatcher-android-arm64 cache-miss
+99 http fetch GET 200 https://registry.npmjs.org/detect-libc 93ms (cache hit)
+100 silly packumentCache full:https://registry.npmjs.org/detect-libc set size:47861 disposed:false
+101 silly fetch manifest @parcel/watcher-linux-arm-musl@2.5.1
+102 silly packumentCache full:https://registry.npmjs.org/@parcel%2fwatcher-linux-arm-musl cache-miss
+103 http fetch GET 200 https://registry.npmjs.org/is-glob 103ms (cache hit)
+104 silly packumentCache full:https://registry.npmjs.org/is-glob set size:40530 disposed:false
+105 silly fetch manifest @parcel/watcher-linux-x64-musl@2.5.1
+106 silly packumentCache full:https://registry.npmjs.org/@parcel%2fwatcher-linux-x64-musl cache-miss
+107 http fetch GET 200 https://registry.npmjs.org/node-addon-api 110ms (cache hit)
+108 silly packumentCache full:https://registry.npmjs.org/node-addon-api set size:375644 disposed:false
+109 silly fetch manifest @parcel/watcher-linux-arm-glibc@2.5.1
+110 silly packumentCache full:https://registry.npmjs.org/@parcel%2fwatcher-linux-arm-glibc cache-miss
+111 http fetch GET 200 https://registry.npmjs.org/@parcel%2fwatcher-darwin-x64 122ms (cache hit)
+112 silly packumentCache full:https://registry.npmjs.org/@parcel%2fwatcher-darwin-x64 set size:28048 disposed:false
+113 silly fetch manifest @parcel/watcher-linux-x64-glibc@2.5.1
+114 silly packumentCache full:https://registry.npmjs.org/@parcel%2fwatcher-linux-x64-glibc cache-miss
+115 http fetch GET 200 https://registry.npmjs.org/@parcel%2fwatcher-win32-x64 128ms (cache hit)
+116 silly packumentCache full:https://registry.npmjs.org/@parcel%2fwatcher-win32-x64 set size:27941 disposed:false
+117 silly fetch manifest @parcel/watcher-linux-arm64-musl@2.5.1
+118 silly packumentCache full:https://registry.npmjs.org/@parcel%2fwatcher-linux-arm64-musl cache-miss
+119 http fetch GET 200 https://registry.npmjs.org/@parcel%2fwatcher-freebsd-x64 131ms (cache hit)
+120 silly packumentCache full:https://registry.npmjs.org/@parcel%2fwatcher-freebsd-x64 set size:21676 disposed:false
+121 silly fetch manifest @parcel/watcher-linux-arm64-glibc@2.5.1
+122 silly packumentCache full:https://registry.npmjs.org/@parcel%2fwatcher-linux-arm64-glibc cache-miss
+123 http fetch GET 200 https://registry.npmjs.org/@parcel%2fwatcher-win32-ia32 135ms (cache hit)
+124 silly packumentCache full:https://registry.npmjs.org/@parcel%2fwatcher-win32-ia32 set size:20007 disposed:false
+125 silly fetch manifest jiti@^2.7.0
+126 silly packumentCache full:https://registry.npmjs.org/jiti cache-miss
+127 http fetch GET 200 https://registry.npmjs.org/@parcel%2fwatcher-darwin-arm64 116ms (cache hit)
+128 silly packumentCache full:https://registry.npmjs.org/@parcel%2fwatcher-darwin-arm64 set size:28259 disposed:false
+129 silly fetch manifest lightningcss@1.32.0
+130 silly packumentCache full:https://registry.npmjs.org/lightningcss cache-miss
+131 http fetch GET 200 https://registry.npmjs.org/@parcel%2fwatcher-android-arm64 119ms (cache hit)
+132 silly packumentCache full:https://registry.npmjs.org/@parcel%2fwatcher-android-arm64 set size:26719 disposed:false
+133 silly fetch manifest magic-string@^0.30.21
+134 silly packumentCache full:https://registry.npmjs.org/magic-string cache-miss
+135 http fetch GET 200 https://registry.npmjs.org/micromatch 154ms (cache hit)
+136 silly packumentCache full:https://registry.npmjs.org/micromatch set size:240630 disposed:false
+137 silly fetch manifest source-map-js@^1.2.1
+138 silly packumentCache full:https://registry.npmjs.org/source-map-js cache-miss
+139 http fetch GET 200 https://registry.npmjs.org/@parcel%2fwatcher-win32-arm64 140ms (cache hit)
+140 silly packumentCache full:https://registry.npmjs.org/@parcel%2fwatcher-win32-arm64 set size:26524 disposed:false
+141 silly fetch manifest @jridgewell/remapping@^2.3.5
+142 silly packumentCache full:https://registry.npmjs.org/@jridgewell%2fremapping cache-miss
+143 http fetch GET 200 https://registry.npmjs.org/@parcel%2fwatcher-linux-x64-musl 111ms (cache hit)
+144 silly packumentCache full:https://registry.npmjs.org/@parcel%2fwatcher-linux-x64-musl set size:28654 disposed:false
+145 silly fetch manifest @tailwindcss/oxide-darwin-x64@4.3.3
+146 silly packumentCache full:https://registry.npmjs.org/@tailwindcss%2foxide-darwin-x64 cache-miss
+147 http fetch GET 200 https://registry.npmjs.org/@parcel%2fwatcher-linux-arm-glibc 98ms (cache hit)
+148 silly packumentCache full:https://registry.npmjs.org/@parcel%2fwatcher-linux-arm-glibc set size:28757 disposed:false
+149 silly fetch manifest @tailwindcss/oxide-freebsd-x64@4.3.3
+150 silly packumentCache full:https://registry.npmjs.org/@tailwindcss%2foxide-freebsd-x64 cache-miss
+151 http fetch GET 200 https://registry.npmjs.org/@parcel%2fwatcher-linux-arm64-glibc 94ms (cache hit)
+152 silly packumentCache full:https://registry.npmjs.org/@parcel%2fwatcher-linux-arm64-glibc set size:28972 disposed:false
+153 silly fetch manifest @tailwindcss/oxide-wasm32-wasi@4.3.3
+154 silly packumentCache full:https://registry.npmjs.org/@tailwindcss%2foxide-wasm32-wasi cache-miss
+155 http fetch GET 200 https://registry.npmjs.org/@parcel%2fwatcher-linux-arm64-musl 103ms (cache hit)
+156 silly packumentCache full:https://registry.npmjs.org/@parcel%2fwatcher-linux-arm64-musl set size:28863 disposed:false
+157 silly fetch manifest @tailwindcss/oxide-darwin-arm64@4.3.3
+158 silly packumentCache full:https://registry.npmjs.org/@tailwindcss%2foxide-darwin-arm64 cache-miss
+159 http fetch GET 200 https://registry.npmjs.org/@parcel%2fwatcher-linux-arm-musl 140ms (cache hit)
+160 silly packumentCache full:https://registry.npmjs.org/@parcel%2fwatcher-linux-arm-musl set size:8932 disposed:false
+161 silly fetch manifest @tailwindcss/oxide-android-arm64@4.3.3
+162 silly packumentCache full:https://registry.npmjs.org/@tailwindcss%2foxide-android-arm64 cache-miss
+163 http fetch GET 200 https://registry.npmjs.org/@parcel%2fwatcher-linux-x64-glibc 118ms (cache hit)
+164 silly packumentCache full:https://registry.npmjs.org/@parcel%2fwatcher-linux-x64-glibc set size:28760 disposed:false
+165 silly fetch manifest @tailwindcss/oxide-linux-x64-gnu@4.3.3
+166 silly packumentCache full:https://registry.npmjs.org/@tailwindcss%2foxide-linux-x64-gnu cache-miss
+167 http fetch GET 200 https://registry.npmjs.org/lightningcss 104ms (cache hit)
+168 silly packumentCache full:https://registry.npmjs.org/lightningcss set size:191065 disposed:false
+169 silly fetch manifest @tailwindcss/oxide-linux-x64-musl@4.3.3
+170 silly packumentCache full:https://registry.npmjs.org/@tailwindcss%2foxide-linux-x64-musl cache-miss
+171 http fetch GET 200 https://registry.npmjs.org/jiti 119ms (cache hit)
+172 silly packumentCache full:https://registry.npmjs.org/jiti set size:387989 disposed:false
+173 silly fetch manifest @tailwindcss/oxide-win32-x64-msvc@4.3.3
+174 silly packumentCache full:https://registry.npmjs.org/@tailwindcss%2foxide-win32-x64-msvc cache-miss
+175 http fetch GET 200 https://registry.npmjs.org/magic-string 124ms (cache hit)
+176 silly packumentCache full:https://registry.npmjs.org/magic-string set size:336545 disposed:false
+177 silly fetch manifest @tailwindcss/oxide-linux-arm64-gnu@4.3.3
+178 silly packumentCache full:https://registry.npmjs.org/@tailwindcss%2foxide-linux-arm64-gnu cache-miss
+179 http fetch GET 200 https://registry.npmjs.org/source-map-js 125ms (cache hit)
+180 silly packumentCache full:https://registry.npmjs.org/source-map-js set size:62640 disposed:false
+181 silly fetch manifest @tailwindcss/oxide-linux-arm64-musl@4.3.3
+182 silly packumentCache full:https://registry.npmjs.org/@tailwindcss%2foxide-linux-arm64-musl cache-miss
+183 http fetch GET 200 https://registry.npmjs.org/@jridgewell%2fremapping 123ms (cache hit)
+184 silly packumentCache full:https://registry.npmjs.org/@jridgewell%2fremapping set size:23809 disposed:false
+185 silly fetch manifest @tailwindcss/oxide-win32-arm64-msvc@4.3.3
+186 silly packumentCache full:https://registry.npmjs.org/@tailwindcss%2foxide-win32-arm64-msvc cache-miss
+187 http fetch GET 200 https://registry.npmjs.org/@tailwindcss%2foxide-android-arm64 125ms (cache hit)
+188 silly packumentCache full:https://registry.npmjs.org/@tailwindcss%2foxide-android-arm64 set size:2125438 disposed:false
+189 silly fetch manifest @tailwindcss/oxide-linux-arm-gnueabihf@4.3.3
+190 silly packumentCache full:https://registry.npmjs.org/@tailwindcss%2foxide-linux-arm-gnueabihf cache-miss
+191 http fetch GET 200 https://registry.npmjs.org/@tailwindcss%2foxide-freebsd-x64 189ms (cache hit)
+192 silly packumentCache full:https://registry.npmjs.org/@tailwindcss%2foxide-freebsd-x64 set size:2963519 disposed:false
+193 silly fetch manifest tapable@^2.3.3
+194 silly packumentCache full:https://registry.npmjs.org/tapable cache-miss
+195 http fetch GET 200 https://registry.npmjs.org/@tailwindcss%2foxide-darwin-x64 251ms (cache hit)
+196 silly packumentCache full:https://registry.npmjs.org/@tailwindcss%2foxide-darwin-x64 set size:2948474 disposed:false
+197 silly fetch manifest graceful-fs@^4.2.4
+198 silly packumentCache full:https://registry.npmjs.org/graceful-fs cache-miss
+199 http fetch GET 200 https://registry.npmjs.org/@tailwindcss%2foxide-wasm32-wasi -18147ms (cache hit)
+200 silly packumentCache full:https://registry.npmjs.org/@tailwindcss%2foxide-wasm32-wasi set size:1559007 disposed:false
+201 http fetch GET 200 https://registry.npmjs.org/@tailwindcss%2foxide-linux-x64-gnu -18131ms (cache hit)
+202 silly packumentCache full:https://registry.npmjs.org/@tailwindcss%2foxide-linux-x64-gnu set size:3009431 disposed:false
+203 http fetch GET 200 https://registry.npmjs.org/@tailwindcss%2foxide-darwin-arm64 -18034ms (cache hit)
+204 silly packumentCache full:https://registry.npmjs.org/@tailwindcss%2foxide-darwin-arm64 set size:2984481 disposed:false
+205 http fetch GET 200 https://registry.npmjs.org/@tailwindcss%2foxide-linux-x64-musl -18001ms (cache hit)
+206 silly packumentCache full:https://registry.npmjs.org/@tailwindcss%2foxide-linux-x64-musl set size:3018615 disposed:false
+207 http fetch GET 200 https://registry.npmjs.org/@tailwindcss%2foxide-win32-x64-msvc -17932ms (cache hit)
+208 silly packumentCache full:https://registry.npmjs.org/@tailwindcss%2foxide-win32-x64-msvc set size:2991003 disposed:false
+209 http fetch GET 200 https://registry.npmjs.org/@tailwindcss%2foxide-linux-arm64-gnu -17864ms (cache hit)
+210 silly packumentCache full:https://registry.npmjs.org/@tailwindcss%2foxide-linux-arm64-gnu set size:3036545 disposed:false
+211 http fetch GET 200 https://registry.npmjs.org/@tailwindcss%2foxide-win32-arm64-msvc -17796ms (cache hit)
+212 silly packumentCache full:https://registry.npmjs.org/@tailwindcss%2foxide-win32-arm64-msvc set size:2102350 disposed:false
+213 http fetch GET 200 https://registry.npmjs.org/@tailwindcss%2foxide-linux-arm64-musl -17751ms (cache hit)
+214 silly packumentCache full:https://registry.npmjs.org/@tailwindcss%2foxide-linux-arm64-musl set size:3047985 disposed:false
+215 http fetch GET 200 https://registry.npmjs.org/tapable -17862ms (cache hit)
+216 silly packumentCache full:https://registry.npmjs.org/tapable set size:141233 disposed:false
+217 http fetch GET 200 https://registry.npmjs.org/graceful-fs 517ms (cache hit)
+218 silly packumentCache full:https://registry.npmjs.org/graceful-fs set size:124285 disposed:false
+219 http fetch GET 200 https://registry.npmjs.org/@tailwindcss%2foxide-linux-arm-gnueabihf -17778ms (cache hit)
+220 silly packumentCache full:https://registry.npmjs.org/@tailwindcss%2foxide-linux-arm-gnueabihf set size:3062597 disposed:false
+221 silly placeDep node_modules/@parcel/watcher @parcel/watcher-android-arm64@2.5.1 OK for: @parcel/watcher@2.5.1 want: 2.5.1
+222 silly placeDep node_modules/@parcel/watcher @parcel/watcher-darwin-arm64@2.5.1 OK for: @parcel/watcher@2.5.1 want: 2.5.1
+223 silly placeDep node_modules/@parcel/watcher @parcel/watcher-darwin-x64@2.5.1 OK for: @parcel/watcher@2.5.1 want: 2.5.1
+224 silly placeDep node_modules/@parcel/watcher @parcel/watcher-freebsd-x64@2.5.1 OK for: @parcel/watcher@2.5.1 want: 2.5.1
+225 silly placeDep node_modules/@parcel/watcher @parcel/watcher-linux-arm-glibc@2.5.1 OK for: @parcel/watcher@2.5.1 want: 2.5.1
+226 silly placeDep node_modules/@parcel/watcher @parcel/watcher-linux-arm-musl@2.5.1 OK for: @parcel/watcher@2.5.1 want: 2.5.1
+227 silly placeDep node_modules/@parcel/watcher @parcel/watcher-linux-arm64-glibc@2.5.1 OK for: @parcel/watcher@2.5.1 want: 2.5.1
+228 silly placeDep node_modules/@parcel/watcher @parcel/watcher-linux-arm64-musl@2.5.1 OK for: @parcel/watcher@2.5.1 want: 2.5.1
+229 silly placeDep node_modules/@parcel/watcher @parcel/watcher-linux-x64-glibc@2.5.1 OK for: @parcel/watcher@2.5.1 want: 2.5.1
+230 silly placeDep node_modules/@parcel/watcher @parcel/watcher-linux-x64-musl@2.5.1 OK for: @parcel/watcher@2.5.1 want: 2.5.1
+231 silly placeDep node_modules/@parcel/watcher @parcel/watcher-win32-arm64@2.5.1 OK for: @parcel/watcher@2.5.1 want: 2.5.1
+232 silly placeDep node_modules/@parcel/watcher @parcel/watcher-win32-ia32@2.5.1 OK for: @parcel/watcher@2.5.1 want: 2.5.1
+233 silly placeDep node_modules/@parcel/watcher @parcel/watcher-win32-x64@2.5.1 OK for: @parcel/watcher@2.5.1 want: 2.5.1
+234 silly placeDep node_modules/@parcel/watcher detect-libc@1.0.3 OK for: @parcel/watcher@2.5.1 want: ^1.0.3
+235 silly placeDep node_modules/@parcel/watcher is-glob@4.0.3 OK for: @parcel/watcher@2.5.1 want: ^4.0.3
+236 silly placeDep node_modules/@parcel/watcher micromatch@4.0.8 OK for: @parcel/watcher@2.5.1 want: ^4.0.5
+237 silly placeDep node_modules/@parcel/watcher node-addon-api@7.1.1 OK for: @parcel/watcher@2.5.1 want: ^7.0.0
+238 silly fetch manifest is-extglob@^2.1.1
+239 silly packumentCache full:https://registry.npmjs.org/is-extglob cache-miss
+240 silly fetch manifest braces@^3.0.3
+241 silly packumentCache full:https://registry.npmjs.org/braces cache-miss
+242 silly fetch manifest picomatch@^2.3.1
+243 silly packumentCache full:https://registry.npmjs.org/picomatch cache-miss
+244 http fetch GET 200 https://registry.npmjs.org/is-extglob 34ms (cache hit)
+245 silly packumentCache full:https://registry.npmjs.org/is-extglob set size:11766 disposed:false
+246 http fetch GET 200 https://registry.npmjs.org/picomatch 32ms (cache hit)
+247 silly packumentCache full:https://registry.npmjs.org/picomatch set size:128942 disposed:false
+248 http fetch GET 200 https://registry.npmjs.org/braces 44ms (cache hit)
+249 silly packumentCache full:https://registry.npmjs.org/braces set size:114529 disposed:false
+250 silly placeDep ROOT mini-svg-data-uri@1.4.4 OK for: @tailwindcss/forms@0.5.11 want: ^1.2.3
+251 silly placeDep node_modules/@tailwindcss/node @jridgewell/remapping@2.3.5 OK for: @tailwindcss/node@4.3.3 want: ^2.3.5
+252 silly placeDep node_modules/@tailwindcss/node jiti@2.7.0 OK for: @tailwindcss/node@4.3.3 want: ^2.7.0
+253 silly placeDep node_modules/@tailwindcss/node lightningcss@1.32.0 OK for: @tailwindcss/node@4.3.3 want: 1.32.0
+254 silly placeDep node_modules/@tailwindcss/node magic-string@0.30.21 OK for: @tailwindcss/node@4.3.3 want: ^0.30.21
+255 silly placeDep node_modules/@tailwindcss/node source-map-js@1.2.1 OK for: @tailwindcss/node@4.3.3 want: ^1.2.1
+256 silly fetch manifest @jridgewell/gen-mapping@^0.3.5
+257 silly packumentCache full:https://registry.npmjs.org/@jridgewell%2fgen-mapping cache-miss
+258 silly fetch manifest @jridgewell/trace-mapping@^0.3.24
+259 silly packumentCache full:https://registry.npmjs.org/@jridgewell%2ftrace-mapping cache-miss
+260 silly fetch manifest detect-libc@^2.0.3
+261 silly packumentCache full:https://registry.npmjs.org/detect-libc cache-hit
+262 silly fetch manifest lightningcss-darwin-x64@1.32.0
+263 silly packumentCache full:https://registry.npmjs.org/lightningcss-darwin-x64 cache-miss
+264 silly fetch manifest lightningcss-freebsd-x64@1.32.0
+265 silly packumentCache full:https://registry.npmjs.org/lightningcss-freebsd-x64 cache-miss
+266 silly fetch manifest lightningcss-darwin-arm64@1.32.0
+267 silly packumentCache full:https://registry.npmjs.org/lightningcss-darwin-arm64 cache-miss
+268 silly fetch manifest lightningcss-android-arm64@1.32.0
+269 silly packumentCache full:https://registry.npmjs.org/lightningcss-android-arm64 cache-miss
+270 silly fetch manifest lightningcss-linux-x64-gnu@1.32.0
+271 silly packumentCache full:https://registry.npmjs.org/lightningcss-linux-x64-gnu cache-miss
+272 silly fetch manifest lightningcss-linux-x64-musl@1.32.0
+273 silly packumentCache full:https://registry.npmjs.org/lightningcss-linux-x64-musl cache-miss
+274 silly fetch manifest lightningcss-win32-x64-msvc@1.32.0
+275 silly packumentCache full:https://registry.npmjs.org/lightningcss-win32-x64-msvc cache-miss
+276 silly fetch manifest lightningcss-linux-arm64-gnu@1.32.0
+277 silly packumentCache full:https://registry.npmjs.org/lightningcss-linux-arm64-gnu cache-miss
+278 silly fetch manifest lightningcss-linux-arm64-musl@1.32.0
+279 silly packumentCache full:https://registry.npmjs.org/lightningcss-linux-arm64-musl cache-miss
+280 http fetch GET 200 https://registry.npmjs.org/@jridgewell%2fgen-mapping 71ms (cache hit)
+281 silly packumentCache full:https://registry.npmjs.org/@jridgewell%2fgen-mapping set size:75941 disposed:false
+282 silly fetch manifest lightningcss-win32-arm64-msvc@1.32.0
+283 silly packumentCache full:https://registry.npmjs.org/lightningcss-win32-arm64-msvc cache-miss
+284 http fetch GET 200 https://registry.npmjs.org/lightningcss-freebsd-x64 72ms (cache hit)
+285 silly packumentCache full:https://registry.npmjs.org/lightningcss-freebsd-x64 set size:44564 disposed:false
+286 silly fetch manifest lightningcss-linux-arm-gnueabihf@1.32.0
+287 silly packumentCache full:https://registry.npmjs.org/lightningcss-linux-arm-gnueabihf cache-miss
+288 http fetch GET 200 https://registry.npmjs.org/lightningcss-darwin-x64 79ms (cache hit)
+289 silly packumentCache full:https://registry.npmjs.org/lightningcss-darwin-x64 set size:80374 disposed:false
+290 silly fetch manifest @jridgewell/sourcemap-codec@^1.5.5
+291 silly packumentCache full:https://registry.npmjs.org/@jridgewell%2fsourcemap-codec cache-miss
+292 http fetch GET 200 https://registry.npmjs.org/lightningcss-win32-x64-msvc 74ms (cache hit)
+293 silly packumentCache full:https://registry.npmjs.org/lightningcss-win32-x64-msvc set size:81347 disposed:false
+294 http fetch GET 200 https://registry.npmjs.org/lightningcss-linux-x64-gnu 80ms (cache hit)
+295 silly packumentCache full:https://registry.npmjs.org/lightningcss-linux-x64-gnu set size:81819 disposed:false
+296 http fetch GET 200 https://registry.npmjs.org/@jridgewell%2ftrace-mapping 96ms (cache hit)
+297 silly packumentCache full:https://registry.npmjs.org/@jridgewell%2ftrace-mapping set size:170909 disposed:false
+298 http fetch GET 200 https://registry.npmjs.org/lightningcss-darwin-arm64 96ms (cache hit)
+299 silly packumentCache full:https://registry.npmjs.org/lightningcss-darwin-arm64 set size:80970 disposed:false
+300 http fetch GET 200 https://registry.npmjs.org/lightningcss-linux-arm64-gnu 91ms (cache hit)
+301 silly packumentCache full:https://registry.npmjs.org/lightningcss-linux-arm64-gnu set size:82397 disposed:false
+302 http fetch GET 200 https://registry.npmjs.org/lightningcss-linux-x64-musl 98ms (cache hit)
+303 silly packumentCache full:https://registry.npmjs.org/lightningcss-linux-x64-musl set size:82032 disposed:false
+304 http fetch GET 200 https://registry.npmjs.org/lightningcss-linux-arm64-musl 90ms (cache hit)
+305 silly packumentCache full:https://registry.npmjs.org/lightningcss-linux-arm64-musl set size:82617 disposed:false
+306 http fetch GET 200 https://registry.npmjs.org/lightningcss-android-arm64 107ms (cache hit)
+307 silly packumentCache full:https://registry.npmjs.org/lightningcss-android-arm64 set size:9371 disposed:false
+308 http fetch GET 200 https://registry.npmjs.org/lightningcss-linux-arm-gnueabihf 47ms (cache hit)
+309 silly packumentCache full:https://registry.npmjs.org/lightningcss-linux-arm-gnueabihf set size:82635 disposed:false
+310 http fetch GET 200 https://registry.npmjs.org/lightningcss-win32-arm64-msvc 56ms (cache hit)
+311 silly packumentCache full:https://registry.npmjs.org/lightningcss-win32-arm64-msvc set size:28346 disposed:false
+312 http fetch GET 200 https://registry.npmjs.org/@jridgewell%2fsourcemap-codec 47ms (cache hit)
+313 silly packumentCache full:https://registry.npmjs.org/@jridgewell%2fsourcemap-codec set size:51856 disposed:false
+314 silly placeDep node_modules/@tailwindcss/oxide @tailwindcss/oxide-android-arm64@4.3.3 OK for: @tailwindcss/oxide@4.3.3 want: 4.3.3
+315 silly placeDep node_modules/@tailwindcss/oxide @tailwindcss/oxide-darwin-arm64@4.3.3 OK for: @tailwindcss/oxide@4.3.3 want: 4.3.3
+316 silly placeDep node_modules/@tailwindcss/oxide @tailwindcss/oxide-darwin-x64@4.3.3 OK for: @tailwindcss/oxide@4.3.3 want: 4.3.3
+317 silly placeDep node_modules/@tailwindcss/oxide @tailwindcss/oxide-freebsd-x64@4.3.3 OK for: @tailwindcss/oxide@4.3.3 want: 4.3.3
+318 silly placeDep node_modules/@tailwindcss/oxide @tailwindcss/oxide-linux-arm-gnueabihf@4.3.3 OK for: @tailwindcss/oxide@4.3.3 want: 4.3.3
+319 silly placeDep node_modules/@tailwindcss/oxide @tailwindcss/oxide-linux-arm64-gnu@4.3.3 OK for: @tailwindcss/oxide@4.3.3 want: 4.3.3
+320 silly placeDep node_modules/@tailwindcss/oxide @tailwindcss/oxide-linux-arm64-musl@4.3.3 OK for: @tailwindcss/oxide@4.3.3 want: 4.3.3
+321 silly placeDep node_modules/@tailwindcss/oxide @tailwindcss/oxide-linux-x64-gnu@4.3.3 OK for: @tailwindcss/oxide@4.3.3 want: 4.3.3
+322 silly placeDep node_modules/@tailwindcss/oxide @tailwindcss/oxide-linux-x64-musl@4.3.3 OK for: @tailwindcss/oxide@4.3.3 want: 4.3.3
+323 silly placeDep node_modules/@tailwindcss/oxide @tailwindcss/oxide-wasm32-wasi@4.3.3 OK for: @tailwindcss/oxide@4.3.3 want: 4.3.3
+324 silly placeDep node_modules/@tailwindcss/oxide @tailwindcss/oxide-win32-arm64-msvc@4.3.3 OK for: @tailwindcss/oxide@4.3.3 want: 4.3.3
+325 silly placeDep node_modules/@tailwindcss/oxide @tailwindcss/oxide-win32-x64-msvc@4.3.3 OK for: @tailwindcss/oxide@4.3.3 want: 4.3.3
+326 silly placeDep ROOT postcss-selector-parser@6.0.10 OK for: @tailwindcss/typography@0.5.20 want: 6.0.10
+327 silly fetch manifest cssesc@^3.0.0
+328 silly packumentCache full:https://registry.npmjs.org/cssesc cache-miss
+329 silly fetch manifest util-deprecate@^1.0.2
+330 silly packumentCache full:https://registry.npmjs.org/util-deprecate cache-miss
+331 http fetch GET 200 https://registry.npmjs.org/util-deprecate 32ms (cache hit)
+332 silly packumentCache full:https://registry.npmjs.org/util-deprecate set size:6674 disposed:false
+333 http fetch GET 200 https://registry.npmjs.org/cssesc 36ms (cache hit)
+334 silly packumentCache full:https://registry.npmjs.org/cssesc set size:18815 disposed:false
+335 silly placeDep node_modules/enhanced-resolve graceful-fs@4.2.11 OK for: enhanced-resolve@5.24.5 want: ^4.2.4
+336 silly placeDep node_modules/enhanced-resolve tapable@2.3.3 OK for: enhanced-resolve@5.24.5 want: ^2.3.3
+337 silly placeDep node_modules/postcss-selector-parser cssesc@3.0.0 OK for: postcss-selector-parser@6.0.10 want: ^3.0.0
+338 silly placeDep node_modules/postcss-selector-parser util-deprecate@1.0.2 OK for: postcss-selector-parser@6.0.10 want: ^1.0.2
+339 silly placeDep node_modules/@parcel/watcher is-extglob@2.1.1 OK for: is-glob@4.0.3 want: ^2.1.1
+340 silly placeDep node_modules/@parcel/watcher braces@3.0.3 OK for: micromatch@4.0.8 want: ^3.0.3
+341 silly placeDep node_modules/@parcel/watcher picomatch@2.3.2 OK for: micromatch@4.0.8 want: ^2.3.1
+342 silly fetch manifest fill-range@^7.1.1
+343 silly packumentCache full:https://registry.npmjs.org/fill-range cache-miss
+344 http fetch GET 200 https://registry.npmjs.org/fill-range 12ms (cache hit)
+345 silly packumentCache full:https://registry.npmjs.org/fill-range set size:90162 disposed:false
+346 silly placeDep node_modules/@parcel/watcher fill-range@7.1.1 OK for: braces@3.0.3 want: ^7.1.1
+347 silly fetch manifest to-regex-range@^5.0.1
+348 silly packumentCache full:https://registry.npmjs.org/to-regex-range cache-miss
+349 http fetch GET 200 https://registry.npmjs.org/to-regex-range 14ms (cache hit)
+350 silly packumentCache full:https://registry.npmjs.org/to-regex-range set size:61569 disposed:false
+351 silly placeDep node_modules/@parcel/watcher to-regex-range@5.0.1 OK for: fill-range@7.1.1 want: ^5.0.1
+352 silly fetch manifest is-number@^7.0.0
+353 silly packumentCache full:https://registry.npmjs.org/is-number cache-miss
+354 http fetch GET 200 https://registry.npmjs.org/is-number 12ms (cache hit)
+355 silly packumentCache full:https://registry.npmjs.org/is-number set size:36183 disposed:false
+356 silly placeDep node_modules/@parcel/watcher is-number@7.0.0 OK for: to-regex-range@5.0.1 want: ^7.0.0
+357 silly placeDep node_modules/@tailwindcss/node @jridgewell/gen-mapping@0.3.13 OK for: @jridgewell/remapping@2.3.5 want: ^0.3.5
+358 silly placeDep node_modules/@tailwindcss/node @jridgewell/trace-mapping@0.3.31 OK for: @jridgewell/remapping@2.3.5 want: ^0.3.24
+359 silly fetch manifest @jridgewell/sourcemap-codec@^1.5.0
+360 silly packumentCache full:https://registry.npmjs.org/@jridgewell%2fsourcemap-codec cache-hit
+361 silly fetch manifest @jridgewell/resolve-uri@^3.1.0
+362 silly packumentCache full:https://registry.npmjs.org/@jridgewell%2fresolve-uri cache-miss
+363 silly fetch manifest @jridgewell/sourcemap-codec@^1.4.14
+364 silly packumentCache full:https://registry.npmjs.org/@jridgewell%2fsourcemap-codec cache-hit
+365 http fetch GET 200 https://registry.npmjs.org/@jridgewell%2fresolve-uri 15ms (cache hit)
+366 silly packumentCache full:https://registry.npmjs.org/@jridgewell%2fresolve-uri set size:57361 disposed:false
+367 silly placeDep node_modules/@tailwindcss/node @jridgewell/sourcemap-codec@1.5.5 OK for: @jridgewell/gen-mapping@0.3.13 want: ^1.5.0
+368 silly placeDep node_modules/@tailwindcss/node @jridgewell/resolve-uri@3.1.2 OK for: @jridgewell/trace-mapping@0.3.31 want: ^3.1.0
+369 silly placeDep node_modules/@tailwindcss/node detect-libc@2.1.2 OK for: lightningcss@1.32.0 want: ^2.0.3
+370 silly placeDep node_modules/@tailwindcss/node lightningcss-android-arm64@1.32.0 OK for: lightningcss@1.32.0 want: 1.32.0
+371 silly placeDep node_modules/@tailwindcss/node lightningcss-darwin-arm64@1.32.0 OK for: lightningcss@1.32.0 want: 1.32.0
+372 silly placeDep node_modules/@tailwindcss/node lightningcss-darwin-x64@1.32.0 OK for: lightningcss@1.32.0 want: 1.32.0
+373 silly placeDep node_modules/@tailwindcss/node lightningcss-freebsd-x64@1.32.0 OK for: lightningcss@1.32.0 want: 1.32.0
+374 silly placeDep node_modules/@tailwindcss/node lightningcss-linux-arm-gnueabihf@1.32.0 OK for: lightningcss@1.32.0 want: 1.32.0
+375 silly placeDep node_modules/@tailwindcss/node lightningcss-linux-arm64-gnu@1.32.0 OK for: lightningcss@1.32.0 want: 1.32.0
+376 silly placeDep node_modules/@tailwindcss/node lightningcss-linux-arm64-musl@1.32.0 OK for: lightningcss@1.32.0 want: 1.32.0
+377 silly placeDep node_modules/@tailwindcss/node lightningcss-linux-x64-gnu@1.32.0 OK for: lightningcss@1.32.0 want: 1.32.0
+378 silly placeDep node_modules/@tailwindcss/node lightningcss-linux-x64-musl@1.32.0 OK for: lightningcss@1.32.0 want: 1.32.0
+379 silly placeDep node_modules/@tailwindcss/node lightningcss-win32-arm64-msvc@1.32.0 OK for: lightningcss@1.32.0 want: 1.32.0
+380 silly placeDep node_modules/@tailwindcss/node lightningcss-win32-x64-msvc@1.32.0 OK for: lightningcss@1.32.0 want: 1.32.0
+381 silly reify mark retired [ '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/braces' ]
+382 silly reify mark retired [ '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/cssesc' ]
+383 silly reify mark retired [ '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/detect-libc' ]
+384 silly reify mark retired [ '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/enhanced-resolve' ]
+385 silly reify mark retired [ '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/fill-range' ]
+386 silly reify mark retired [ '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/graceful-fs' ]
+387 silly reify mark retired [ '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/is-extglob' ]
+388 silly reify mark retired [ '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/is-glob' ]
+389 silly reify mark retired [ '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/is-number' ]
+390 silly reify mark retired [ '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/jiti' ]
+391 silly reify mark retired [ '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/lightningcss' ]
+392 silly reify mark retired [
+392 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/lightningcss-android-arm64'
+392 silly reify ]
+393 silly reify mark retired [
+393 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/lightningcss-darwin-arm64'
+393 silly reify ]
+394 silly reify mark retired [
+394 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/lightningcss-darwin-x64'
+394 silly reify ]
+395 silly reify mark retired [
+395 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/lightningcss-freebsd-x64'
+395 silly reify ]
+396 silly reify mark retired [
+396 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/lightningcss-linux-arm-gnueabihf'
+396 silly reify ]
+397 silly reify mark retired [
+397 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/lightningcss-linux-arm64-gnu'
+397 silly reify ]
+398 silly reify mark retired [
+398 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/lightningcss-linux-arm64-musl'
+398 silly reify ]
+399 silly reify mark retired [
+399 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/lightningcss-linux-x64-gnu'
+399 silly reify ]
+400 silly reify mark retired [
+400 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/lightningcss-linux-x64-musl'
+400 silly reify ]
+401 silly reify mark retired [
+401 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/lightningcss-win32-arm64-msvc'
+401 silly reify ]
+402 silly reify mark retired [
+402 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/lightningcss-win32-x64-msvc'
+402 silly reify ]
+403 silly reify mark retired [ '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/magic-string' ]
+404 silly reify mark retired [ '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/micromatch' ]
+405 silly reify mark retired [ '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/mini-svg-data-uri' ]
+406 silly reify mark retired [ '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/mri' ]
+407 silly reify mark retired [ '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/node-addon-api' ]
+408 silly reify mark retired [ '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/picocolors' ]
+409 silly reify mark retired [ '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/picomatch' ]
+410 silly reify mark retired [
+410 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/postcss-selector-parser'
+410 silly reify ]
+411 silly reify mark retired [ '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/source-map-js' ]
+412 silly reify mark retired [ '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/tailwindcss' ]
+413 silly reify mark retired [ '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/tapable' ]
+414 silly reify mark retired [ '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/to-regex-range' ]
+415 silly reify mark retired [ '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/util-deprecate' ]
+416 silly reify mark retired [
+416 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@jridgewell/gen-mapping'
+416 silly reify ]
+417 silly reify mark retired [
+417 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@jridgewell/resolve-uri'
+417 silly reify ]
+418 silly reify mark retired [
+418 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@jridgewell/sourcemap-codec'
+418 silly reify ]
+419 silly reify mark retired [
+419 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@jridgewell/trace-mapping'
+419 silly reify ]
+420 silly reify mark retired [ '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@jridgewell/remapping' ]
+421 silly reify mark retired [ '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher' ]
+422 silly reify mark retired [
+422 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher-android-arm64'
+422 silly reify ]
+423 silly reify mark retired [
+423 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher-darwin-arm64'
+423 silly reify ]
+424 silly reify mark retired [
+424 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher-darwin-x64'
+424 silly reify ]
+425 silly reify mark retired [
+425 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher-freebsd-x64'
+425 silly reify ]
+426 silly reify mark retired [
+426 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher-linux-arm-glibc'
+426 silly reify ]
+427 silly reify mark retired [
+427 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher-linux-arm-musl'
+427 silly reify ]
+428 silly reify mark retired [
+428 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher-linux-arm64-glibc'
+428 silly reify ]
+429 silly reify mark retired [
+429 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher-linux-arm64-musl'
+429 silly reify ]
+430 silly reify mark retired [
+430 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher-linux-x64-glibc'
+430 silly reify ]
+431 silly reify mark retired [
+431 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher-linux-x64-musl'
+431 silly reify ]
+432 silly reify mark retired [
+432 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher-win32-arm64'
+432 silly reify ]
+433 silly reify mark retired [
+433 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher-win32-ia32'
+433 silly reify ]
+434 silly reify mark retired [
+434 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher-win32-x64'
+434 silly reify ]
+435 silly reify mark retired [ '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/cli' ]
+436 silly reify mark retired [ '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/forms' ]
+437 silly reify mark retired [ '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/node' ]
+438 silly reify mark retired [ '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide' ]
+439 silly reify mark retired [
+439 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide-android-arm64'
+439 silly reify ]
+440 silly reify mark retired [
+440 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide-darwin-arm64'
+440 silly reify ]
+441 silly reify mark retired [
+441 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide-darwin-x64'
+441 silly reify ]
+442 silly reify mark retired [
+442 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide-freebsd-x64'
+442 silly reify ]
+443 silly reify mark retired [
+443 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide-linux-arm-gnueabihf'
+443 silly reify ]
+444 silly reify mark retired [
+444 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide-linux-arm64-gnu'
+444 silly reify ]
+445 silly reify mark retired [
+445 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide-linux-arm64-musl'
+445 silly reify ]
+446 silly reify mark retired [
+446 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide-linux-x64-gnu'
+446 silly reify ]
+447 silly reify mark retired [
+447 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide-linux-x64-musl'
+447 silly reify ]
+448 silly reify mark retired [
+448 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide-wasm32-wasi'
+448 silly reify ]
+449 silly reify mark retired [
+449 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide-win32-arm64-msvc'
+449 silly reify ]
+450 silly reify mark retired [
+450 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide-win32-x64-msvc'
+450 silly reify ]
+451 silly reify mark retired [
+451 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/typography'
+451 silly reify ]
+452 silly reify moves {
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/braces': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/.braces-eT1BGSYn',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/cssesc': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/.cssesc-913hE5hp',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/detect-libc': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/.detect-libc-mfYHBNJc',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/enhanced-resolve': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/.enhanced-resolve-jOtwOYi9',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/fill-range': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/.fill-range-uqFzqTFW',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/graceful-fs': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/.graceful-fs-brYlArmj',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/is-extglob': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/.is-extglob-oDp0zV9R',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/is-glob': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/.is-glob-N6tC5ejH',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/is-number': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/.is-number-xzhKMAM6',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/jiti': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/.jiti-80auKZJy',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/lightningcss': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/.lightningcss-RLQFbKPj',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/lightningcss-android-arm64': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/.lightningcss-android-arm64-s8S79XD0',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/lightningcss-darwin-arm64': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/.lightningcss-darwin-arm64-I8ygg30N',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/lightningcss-darwin-x64': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/.lightningcss-darwin-x64-5nZZGzwH',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/lightningcss-freebsd-x64': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/.lightningcss-freebsd-x64-IhUEBH2u',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/lightningcss-linux-arm-gnueabihf': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/.lightningcss-linux-arm-gnueabihf-cupLUz6z',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/lightningcss-linux-arm64-gnu': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/.lightningcss-linux-arm64-gnu-5FfTxCPe',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/lightningcss-linux-arm64-musl': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/.lightningcss-linux-arm64-musl-V16qBQKr',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/lightningcss-linux-x64-gnu': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/.lightningcss-linux-x64-gnu-2LXU4Ds7',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/lightningcss-linux-x64-musl': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/.lightningcss-linux-x64-musl-pc8nU2IU',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/lightningcss-win32-arm64-msvc': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/.lightningcss-win32-arm64-msvc-H0TTOT3s',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/lightningcss-win32-x64-msvc': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/.lightningcss-win32-x64-msvc-zMwosdzc',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/magic-string': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/.magic-string-rZ22k8Vg',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/micromatch': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/.micromatch-T7umKZzx',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/mini-svg-data-uri': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/.mini-svg-data-uri-B7TE2vh2',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/mri': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/.mri-ANcTVL4K',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/node-addon-api': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/.node-addon-api-9f9LCOdu',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/picocolors': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/.picocolors-4528LoHx',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/picomatch': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/.picomatch-hEm5BcnV',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/postcss-selector-parser': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/.postcss-selector-parser-XNupu0XY',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/source-map-js': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/.source-map-js-meiOrdq2',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/tailwindcss': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/.tailwindcss-E7pLRnPu',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/tapable': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/.tapable-jTC8Xcjx',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/to-regex-range': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/.to-regex-range-bSBmwiiv',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/util-deprecate': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/.util-deprecate-zHTbti0K',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@jridgewell/gen-mapping': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@jridgewell/.gen-mapping-wjgWxfkj',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@jridgewell/resolve-uri': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@jridgewell/.resolve-uri-tZFdjaPd',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@jridgewell/sourcemap-codec': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@jridgewell/.sourcemap-codec-IqhD5qKA',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@jridgewell/trace-mapping': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@jridgewell/.trace-mapping-HS1xLVcL',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@jridgewell/remapping': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@jridgewell/.remapping-EpMU57Pv',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/.watcher-6kK4Tlo6',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher-android-arm64': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/.watcher-android-arm64-w1qaZSFF',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher-darwin-arm64': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/.watcher-darwin-arm64-50mo6YZN',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher-darwin-x64': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/.watcher-darwin-x64-7RxPts1j',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher-freebsd-x64': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/.watcher-freebsd-x64-3yVudf5M',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher-linux-arm-glibc': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/.watcher-linux-arm-glibc-0kfmiSrA',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher-linux-arm-musl': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/.watcher-linux-arm-musl-wtHdZ9uS',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher-linux-arm64-glibc': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/.watcher-linux-arm64-glibc-dveBWF08',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher-linux-arm64-musl': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/.watcher-linux-arm64-musl-SIRT1tyc',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher-linux-x64-glibc': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/.watcher-linux-x64-glibc-wG3lzfdl',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher-linux-x64-musl': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/.watcher-linux-x64-musl-ZJUv9DzK',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher-win32-arm64': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/.watcher-win32-arm64-B6MyhJYl',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher-win32-ia32': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/.watcher-win32-ia32-GrAzwgNy',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher-win32-x64': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/.watcher-win32-x64-uz6kyKa8',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/cli': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/.cli-3XLTlmwq',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/forms': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/.forms-8bo8zBmZ',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/node': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/.node-vcHI97mJ',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/.oxide-z4FMy64P',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide-android-arm64': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/.oxide-android-arm64-3X5hjsMP',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide-darwin-arm64': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/.oxide-darwin-arm64-4o4Gauv8',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide-darwin-x64': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/.oxide-darwin-x64-0FwIdpO3',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide-freebsd-x64': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/.oxide-freebsd-x64-FuWxHptE',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide-linux-arm-gnueabihf': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/.oxide-linux-arm-gnueabihf-QOIPCtzw',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide-linux-arm64-gnu': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/.oxide-linux-arm64-gnu-keqvZfr7',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide-linux-arm64-musl': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/.oxide-linux-arm64-musl-S8dYnsqL',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide-linux-x64-gnu': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/.oxide-linux-x64-gnu-xYBP2Ofj',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide-linux-x64-musl': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/.oxide-linux-x64-musl-uZ5YoUeF',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide-wasm32-wasi': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/.oxide-wasm32-wasi-Tg2xC7QE',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide-win32-arm64-msvc': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/.oxide-win32-arm64-msvc-uNXiPx1G',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide-win32-x64-msvc': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/.oxide-win32-x64-msvc-Fxes1HMs',
+452 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/typography': '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/.typography-mW1k30f1'
+452 silly reify }
+453 verbose reify failed optional dependency /home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide/node_modules/@tailwindcss/oxide-wasm32-wasi
+454 silly reify mark deleted [
+454 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide/node_modules/@tailwindcss/oxide-wasm32-wasi'
+454 silly reify ]
+455 silly audit bulk request {
+455 silly audit   '@tailwindcss/cli': [ '4.3.3' ],
+455 silly audit   '@tailwindcss/forms': [ '0.5.11' ],
+455 silly audit   '@tailwindcss/typography': [ '0.5.20' ],
+455 silly audit   tailwindcss: [ '4.3.3' ],
+455 silly audit   '@parcel/watcher': [ '2.5.1' ],
+455 silly audit   '@tailwindcss/node': [ '4.3.3' ],
+455 silly audit   '@tailwindcss/oxide': [ '4.3.3' ],
+455 silly audit   'enhanced-resolve': [ '5.24.5' ],
+455 silly audit   mri: [ '1.2.0' ],
+455 silly audit   picocolors: [ '1.1.1' ],
+455 silly audit   '@parcel/watcher-android-arm64': [ '2.5.1' ],
+455 silly audit   '@parcel/watcher-darwin-arm64': [ '2.5.1' ],
+455 silly audit   '@parcel/watcher-darwin-x64': [ '2.5.1' ],
+455 silly audit   '@parcel/watcher-freebsd-x64': [ '2.5.1' ],
+455 silly audit   '@parcel/watcher-linux-arm-glibc': [ '2.5.1' ],
+455 silly audit   '@parcel/watcher-linux-arm-musl': [ '2.5.1' ],
+455 silly audit   '@parcel/watcher-linux-arm64-glibc': [ '2.5.1' ],
+455 silly audit   '@parcel/watcher-linux-arm64-musl': [ '2.5.1' ],
+455 silly audit   '@parcel/watcher-linux-x64-glibc': [ '2.5.1' ],
+455 silly audit   '@parcel/watcher-linux-x64-musl': [ '2.5.1' ],
+455 silly audit   '@parcel/watcher-win32-arm64': [ '2.5.1' ],
+455 silly audit   '@parcel/watcher-win32-ia32': [ '2.5.1' ],
+455 silly audit   '@parcel/watcher-win32-x64': [ '2.5.1' ],
+455 silly audit   'detect-libc': [ '1.0.3', '2.1.2' ],
+455 silly audit   'is-glob': [ '4.0.3' ],
+455 silly audit   micromatch: [ '4.0.8' ],
+455 silly audit   'node-addon-api': [ '7.1.1' ],
+455 silly audit   'mini-svg-data-uri': [ '1.4.4' ],
+455 silly audit   '@jridgewell/remapping': [ '2.3.5' ],
+455 silly audit   jiti: [ '2.7.0' ],
+455 silly audit   lightningcss: [ '1.32.0' ],
+455 silly audit   'magic-string': [ '0.30.21' ],
+455 silly audit   'source-map-js': [ '1.2.1' ],
+455 silly audit   '@tailwindcss/oxide-android-arm64': [ '4.3.3' ],
+455 silly audit   '@tailwindcss/oxide-darwin-arm64': [ '4.3.3' ],
+455 silly audit   '@tailwindcss/oxide-darwin-x64': [ '4.3.3' ],
+455 silly audit   '@tailwindcss/oxide-freebsd-x64': [ '4.3.3' ],
+455 silly audit   '@tailwindcss/oxide-linux-arm-gnueabihf': [ '4.3.3' ],
+455 silly audit   '@tailwindcss/oxide-linux-arm64-gnu': [ '4.3.3' ],
+455 silly audit   '@tailwindcss/oxide-linux-arm64-musl': [ '4.3.3' ],
+455 silly audit   '@tailwindcss/oxide-linux-x64-gnu': [ '4.3.3' ],
+455 silly audit   '@tailwindcss/oxide-linux-x64-musl': [ '4.3.3' ],
+455 silly audit   '@tailwindcss/oxide-win32-arm64-msvc': [ '4.3.3' ],
+455 silly audit   '@tailwindcss/oxide-win32-x64-msvc': [ '4.3.3' ],
+455 silly audit   'postcss-selector-parser': [ '6.0.10' ],
+455 silly audit   'graceful-fs': [ '4.2.11' ],
+455 silly audit   tapable: [ '2.3.3' ],
+455 silly audit   cssesc: [ '3.0.0' ],
+455 silly audit   'util-deprecate': [ '1.0.2' ],
+455 silly audit   'is-extglob': [ '2.1.1' ],
+455 silly audit   braces: [ '3.0.3' ],
+455 silly audit   picomatch: [ '2.3.2' ],
+455 silly audit   'fill-range': [ '7.1.1' ],
+455 silly audit   'to-regex-range': [ '5.0.1' ],
+455 silly audit   'is-number': [ '7.0.0' ],
+455 silly audit   '@jridgewell/gen-mapping': [ '0.3.13' ],
+455 silly audit   '@jridgewell/trace-mapping': [ '0.3.31' ],
+455 silly audit   '@jridgewell/sourcemap-codec': [ '1.5.5' ],
+455 silly audit   '@jridgewell/resolve-uri': [ '3.1.2' ],
+455 silly audit   'lightningcss-android-arm64': [ '1.32.0' ],
+455 silly audit   'lightningcss-darwin-arm64': [ '1.32.0' ],
+455 silly audit   'lightningcss-darwin-x64': [ '1.32.0' ],
+455 silly audit   'lightningcss-freebsd-x64': [ '1.32.0' ],
+455 silly audit   'lightningcss-linux-arm-gnueabihf': [ '1.32.0' ],
+455 silly audit   'lightningcss-linux-arm64-gnu': [ '1.32.0' ],
+455 silly audit   'lightningcss-linux-arm64-musl': [ '1.32.0' ],
+455 silly audit   'lightningcss-linux-x64-gnu': [ '1.32.0' ],
+455 silly audit   'lightningcss-linux-x64-musl': [ '1.32.0' ],
+455 silly audit   'lightningcss-win32-arm64-msvc': [ '1.32.0' ],
+455 silly audit   'lightningcss-win32-x64-msvc': [ '1.32.0' ],
+455 silly audit   '@tailwindcss/oxide-wasm32-wasi': [ '4.3.3' ]
+455 silly audit }
+456 verbose reify failed optional dependency /home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide/node_modules/@tailwindcss/oxide-win32-x64-msvc
+457 silly reify mark deleted [
+457 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide/node_modules/@tailwindcss/oxide-win32-x64-msvc'
+457 silly reify ]
+458 verbose reify failed optional dependency /home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide/node_modules/@tailwindcss/oxide-win32-arm64-msvc
+459 silly reify mark deleted [
+459 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide/node_modules/@tailwindcss/oxide-win32-arm64-msvc'
+459 silly reify ]
+460 verbose reify failed optional dependency /home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide/node_modules/@tailwindcss/oxide-linux-x64-musl
+461 silly reify mark deleted [
+461 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide/node_modules/@tailwindcss/oxide-linux-x64-musl'
+461 silly reify ]
+462 verbose reify failed optional dependency /home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide/node_modules/@tailwindcss/oxide-linux-arm64-musl
+463 silly reify mark deleted [
+463 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide/node_modules/@tailwindcss/oxide-linux-arm64-musl'
+463 silly reify ]
+464 verbose reify failed optional dependency /home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide/node_modules/@tailwindcss/oxide-linux-arm64-gnu
+465 silly reify mark deleted [
+465 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide/node_modules/@tailwindcss/oxide-linux-arm64-gnu'
+465 silly reify ]
+466 verbose reify failed optional dependency /home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide/node_modules/@tailwindcss/oxide-linux-arm-gnueabihf
+467 silly reify mark deleted [
+467 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide/node_modules/@tailwindcss/oxide-linux-arm-gnueabihf'
+467 silly reify ]
+468 verbose reify failed optional dependency /home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide/node_modules/@tailwindcss/oxide-freebsd-x64
+469 silly reify mark deleted [
+469 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide/node_modules/@tailwindcss/oxide-freebsd-x64'
+469 silly reify ]
+470 verbose reify failed optional dependency /home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide/node_modules/@tailwindcss/oxide-darwin-x64
+471 silly reify mark deleted [
+471 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide/node_modules/@tailwindcss/oxide-darwin-x64'
+471 silly reify ]
+472 verbose reify failed optional dependency /home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide/node_modules/@tailwindcss/oxide-darwin-arm64
+473 silly reify mark deleted [
+473 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide/node_modules/@tailwindcss/oxide-darwin-arm64'
+473 silly reify ]
+474 verbose reify failed optional dependency /home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide/node_modules/@tailwindcss/oxide-android-arm64
+475 silly reify mark deleted [
+475 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/oxide/node_modules/@tailwindcss/oxide-android-arm64'
+475 silly reify ]
+476 verbose reify failed optional dependency /home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/node/node_modules/lightningcss-win32-x64-msvc
+477 silly reify mark deleted [
+477 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/node/node_modules/lightningcss-win32-x64-msvc'
+477 silly reify ]
+478 verbose reify failed optional dependency /home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/node/node_modules/lightningcss-win32-arm64-msvc
+479 silly reify mark deleted [
+479 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/node/node_modules/lightningcss-win32-arm64-msvc'
+479 silly reify ]
+480 verbose reify failed optional dependency /home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/node/node_modules/lightningcss-linux-x64-musl
+481 silly reify mark deleted [
+481 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/node/node_modules/lightningcss-linux-x64-musl'
+481 silly reify ]
+482 verbose reify failed optional dependency /home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/node/node_modules/lightningcss-linux-arm64-musl
+483 silly reify mark deleted [
+483 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/node/node_modules/lightningcss-linux-arm64-musl'
+483 silly reify ]
+484 verbose reify failed optional dependency /home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/node/node_modules/lightningcss-linux-arm64-gnu
+485 silly reify mark deleted [
+485 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/node/node_modules/lightningcss-linux-arm64-gnu'
+485 silly reify ]
+486 verbose reify failed optional dependency /home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/node/node_modules/lightningcss-linux-arm-gnueabihf
+487 silly reify mark deleted [
+487 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/node/node_modules/lightningcss-linux-arm-gnueabihf'
+487 silly reify ]
+488 verbose reify failed optional dependency /home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/node/node_modules/lightningcss-freebsd-x64
+489 silly reify mark deleted [
+489 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/node/node_modules/lightningcss-freebsd-x64'
+489 silly reify ]
+490 verbose reify failed optional dependency /home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/node/node_modules/lightningcss-darwin-x64
+491 silly reify mark deleted [
+491 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/node/node_modules/lightningcss-darwin-x64'
+491 silly reify ]
+492 verbose reify failed optional dependency /home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/node/node_modules/lightningcss-darwin-arm64
+493 silly reify mark deleted [
+493 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/node/node_modules/lightningcss-darwin-arm64'
+493 silly reify ]
+494 verbose reify failed optional dependency /home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/node/node_modules/lightningcss-android-arm64
+495 silly reify mark deleted [
+495 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@tailwindcss/node/node_modules/lightningcss-android-arm64'
+495 silly reify ]
+496 verbose reify failed optional dependency /home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher/node_modules/@parcel/watcher-win32-x64
+497 silly reify mark deleted [
+497 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher/node_modules/@parcel/watcher-win32-x64'
+497 silly reify ]
+498 verbose reify failed optional dependency /home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher/node_modules/@parcel/watcher-win32-ia32
+499 silly reify mark deleted [
+499 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher/node_modules/@parcel/watcher-win32-ia32'
+499 silly reify ]
+500 verbose reify failed optional dependency /home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher/node_modules/@parcel/watcher-win32-arm64
+501 silly reify mark deleted [
+501 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher/node_modules/@parcel/watcher-win32-arm64'
+501 silly reify ]
+502 verbose reify failed optional dependency /home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher/node_modules/@parcel/watcher-linux-x64-musl
+503 silly reify mark deleted [
+503 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher/node_modules/@parcel/watcher-linux-x64-musl'
+503 silly reify ]
+504 verbose reify failed optional dependency /home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher/node_modules/@parcel/watcher-linux-arm64-musl
+505 silly reify mark deleted [
+505 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher/node_modules/@parcel/watcher-linux-arm64-musl'
+505 silly reify ]
+506 verbose reify failed optional dependency /home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher/node_modules/@parcel/watcher-linux-arm64-glibc
+507 silly reify mark deleted [
+507 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher/node_modules/@parcel/watcher-linux-arm64-glibc'
+507 silly reify ]
+508 verbose reify failed optional dependency /home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher/node_modules/@parcel/watcher-linux-arm-musl
+509 silly reify mark deleted [
+509 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher/node_modules/@parcel/watcher-linux-arm-musl'
+509 silly reify ]
+510 verbose reify failed optional dependency /home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher/node_modules/@parcel/watcher-linux-arm-glibc
+511 silly reify mark deleted [
+511 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher/node_modules/@parcel/watcher-linux-arm-glibc'
+511 silly reify ]
+512 verbose reify failed optional dependency /home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher/node_modules/@parcel/watcher-freebsd-x64
+513 silly reify mark deleted [
+513 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher/node_modules/@parcel/watcher-freebsd-x64'
+513 silly reify ]
+514 verbose reify failed optional dependency /home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher/node_modules/@parcel/watcher-darwin-x64
+515 silly reify mark deleted [
+515 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher/node_modules/@parcel/watcher-darwin-x64'
+515 silly reify ]
+516 verbose reify failed optional dependency /home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher/node_modules/@parcel/watcher-darwin-arm64
+517 silly reify mark deleted [
+517 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher/node_modules/@parcel/watcher-darwin-arm64'
+517 silly reify ]
+518 verbose reify failed optional dependency /home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher/node_modules/@parcel/watcher-android-arm64
+519 silly reify mark deleted [
+519 silly reify   '/home/lamhuy/HuyOJ/HuyOJ/tmath/node_modules/@parcel/watcher/node_modules/@parcel/watcher-android-arm64'
+519 silly reify ]
+520 silly tarball no local data for @tailwindcss/typography@https://registry.npmjs.org/@tailwindcss/typography/-/typography-0.5.20.tgz. Extracting by manifest.
+521 silly tarball no local data for @tailwindcss/forms@https://registry.npmjs.org/@tailwindcss/forms/-/forms-0.5.11.tgz. Extracting by manifest.
+522 silly tarball no local data for postcss-selector-parser@https://registry.npmjs.org/postcss-selector-parser/-/postcss-selector-parser-6.0.10.tgz. Extracting by manifest.
+523 silly tarball no local data for mini-svg-data-uri@https://registry.npmjs.org/mini-svg-data-uri/-/mini-svg-data-uri-1.4.4.tgz. Extracting by manifest.
+524 silly tarball no local data for util-deprecate@https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz. Extracting by manifest.
+525 silly tarball no local data for cssesc@https://registry.npmjs.org/cssesc/-/cssesc-3.0.0.tgz. Extracting by manifest.
+526 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 1163ms
+527 silly audit report {}
+528 http fetch GET 200 https://registry.npmjs.org/cssesc/-/cssesc-3.0.0.tgz 837ms (cache miss)
+529 http fetch GET 200 https://registry.npmjs.org/mini-svg-data-uri/-/mini-svg-data-uri-1.4.4.tgz 866ms (cache miss)
+530 http fetch GET 200 https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz 861ms (cache miss)
+531 http fetch GET 200 https://registry.npmjs.org/@tailwindcss/typography/-/typography-0.5.20.tgz 990ms (cache miss)
+532 http fetch GET 200 https://registry.npmjs.org/@tailwindcss/forms/-/forms-0.5.11.tgz 1022ms (cache miss)
+533 http fetch GET 200 https://registry.npmjs.org/postcss-selector-parser/-/postcss-selector-parser-6.0.10.tgz 1088ms (cache miss)
+534 info run @parcel/watcher@2.5.1 install node_modules/@parcel/watcher node scripts/build-from-source.js
+535 info run @parcel/watcher@2.5.1 install { code: 0, signal: null }
+536 silly CHANGE node_modules/@tailwindcss/typography
+537 silly REMOVE node_modules/@tailwindcss/oxide-win32-x64-msvc
+538 silly REMOVE node_modules/@tailwindcss/oxide-win32-arm64-msvc
+539 silly REMOVE node_modules/@tailwindcss/oxide-wasm32-wasi
+540 silly REMOVE node_modules/@tailwindcss/oxide-linux-x64-musl
+541 silly REMOVE node_modules/@tailwindcss/oxide-linux-x64-gnu
+542 silly REMOVE node_modules/@tailwindcss/oxide-linux-arm64-musl
+543 silly REMOVE node_modules/@tailwindcss/oxide-linux-arm64-gnu
+544 silly REMOVE node_modules/@tailwindcss/oxide-linux-arm-gnueabihf
+545 silly REMOVE node_modules/@tailwindcss/oxide-freebsd-x64
+546 silly REMOVE node_modules/@tailwindcss/oxide-darwin-x64
+547 silly REMOVE node_modules/@tailwindcss/oxide-darwin-arm64
+548 silly REMOVE node_modules/@tailwindcss/oxide-android-arm64
+549 silly CHANGE node_modules/@tailwindcss/oxide
+550 silly ADD
+551 silly ADD
+552 silly ADD
+553 silly ADD
+554 silly ADD node_modules/@tailwindcss/oxide/node_modules/@tailwindcss/oxide-linux-x64-gnu
+555 silly ADD
+556 silly ADD
+557 silly ADD
+558 silly ADD
+559 silly ADD
+560 silly ADD
+561 silly ADD
+562 silly CHANGE node_modules/@tailwindcss/node
+563 silly ADD
+564 silly ADD
+565 silly ADD
+566 silly ADD node_modules/@tailwindcss/node/node_modules/lightningcss-linux-x64-gnu
+567 silly ADD
+568 silly ADD
+569 silly ADD
+570 silly ADD
+571 silly ADD
+572 silly ADD
+573 silly ADD
+574 silly ADD node_modules/@tailwindcss/node/node_modules/detect-libc
+575 silly ADD node_modules/@tailwindcss/node/node_modules/@jridgewell/resolve-uri
+576 silly ADD node_modules/@tailwindcss/node/node_modules/@jridgewell/sourcemap-codec
+577 silly ADD node_modules/@tailwindcss/node/node_modules/@jridgewell/trace-mapping
+578 silly ADD node_modules/@tailwindcss/node/node_modules/@jridgewell/gen-mapping
+579 silly ADD node_modules/@tailwindcss/node/node_modules/source-map-js
+580 silly ADD node_modules/@tailwindcss/node/node_modules/magic-string
+581 silly ADD node_modules/@tailwindcss/node/node_modules/lightningcss
+582 silly ADD node_modules/@tailwindcss/node/node_modules/jiti
+583 silly ADD node_modules/@tailwindcss/node/node_modules/@jridgewell/remapping
+584 silly CHANGE node_modules/@tailwindcss/forms
+585 silly CHANGE node_modules/@tailwindcss/cli
+586 silly REMOVE node_modules/@parcel/watcher-win32-x64
+587 silly REMOVE node_modules/@parcel/watcher-win32-ia32
+588 silly REMOVE node_modules/@parcel/watcher-win32-arm64
+589 silly REMOVE node_modules/@parcel/watcher-linux-x64-musl
+590 silly REMOVE node_modules/@parcel/watcher-linux-x64-glibc
+591 silly REMOVE node_modules/@parcel/watcher-linux-arm64-musl
+592 silly REMOVE node_modules/@parcel/watcher-linux-arm64-glibc
+593 silly REMOVE node_modules/@parcel/watcher-linux-arm-musl
+594 silly REMOVE node_modules/@parcel/watcher-linux-arm-glibc
+595 silly REMOVE node_modules/@parcel/watcher-freebsd-x64
+596 silly REMOVE node_modules/@parcel/watcher-darwin-x64
+597 silly REMOVE node_modules/@parcel/watcher-darwin-arm64
+598 silly REMOVE node_modules/@parcel/watcher-android-arm64
+599 silly CHANGE node_modules/@parcel/watcher
+600 silly ADD node_modules/@parcel/watcher/node_modules/is-number
+601 silly ADD node_modules/@parcel/watcher/node_modules/to-regex-range
+602 silly ADD node_modules/@parcel/watcher/node_modules/fill-range
+603 silly ADD node_modules/@parcel/watcher/node_modules/picomatch
+604 silly ADD node_modules/@parcel/watcher/node_modules/braces
+605 silly ADD node_modules/@parcel/watcher/node_modules/is-extglob
+606 silly ADD node_modules/@parcel/watcher/node_modules/node-addon-api
+607 silly ADD node_modules/@parcel/watcher/node_modules/micromatch
+608 silly ADD node_modules/@parcel/watcher/node_modules/is-glob
+609 silly ADD node_modules/@parcel/watcher/node_modules/detect-libc
+610 silly ADD
+611 silly ADD
+612 silly ADD
+613 silly ADD
+614 silly ADD node_modules/@parcel/watcher/node_modules/@parcel/watcher-linux-x64-glibc
+615 silly ADD
+616 silly ADD
+617 silly ADD
+618 silly ADD
+619 silly ADD
+620 silly ADD
+621 silly ADD
+622 silly ADD
+623 silly REMOVE node_modules/@jridgewell/remapping
+624 silly REMOVE node_modules/@jridgewell/trace-mapping
+625 silly REMOVE node_modules/@jridgewell/sourcemap-codec
+626 silly REMOVE node_modules/@jridgewell/resolve-uri
+627 silly REMOVE node_modules/@jridgewell/gen-mapping
+628 silly REMOVE node_modules/util-deprecate
+629 silly REMOVE node_modules/to-regex-range
+630 silly REMOVE node_modules/tapable
+631 silly CHANGE node_modules/tailwindcss
+632 silly REMOVE node_modules/source-map-js
+633 silly CHANGE node_modules/postcss-selector-parser
+634 silly ADD node_modules/postcss-selector-parser/node_modules/util-deprecate
+635 silly ADD node_modules/postcss-selector-parser/node_modules/cssesc
+636 silly REMOVE node_modules/picomatch
+637 silly CHANGE node_modules/picocolors
+638 silly REMOVE node_modules/node-addon-api
+639 silly CHANGE node_modules/mri
+640 silly CHANGE node_modules/mini-svg-data-uri
+641 silly REMOVE node_modules/micromatch
+642 silly REMOVE node_modules/magic-string
+643 silly REMOVE node_modules/lightningcss-win32-x64-msvc
+644 silly REMOVE node_modules/lightningcss-win32-arm64-msvc
+645 silly REMOVE node_modules/lightningcss-linux-x64-musl
+646 silly REMOVE node_modules/lightningcss-linux-x64-gnu
+647 silly REMOVE node_modules/lightningcss-linux-arm64-musl
+648 silly REMOVE node_modules/lightningcss-linux-arm64-gnu
+649 silly REMOVE node_modules/lightningcss-linux-arm-gnueabihf
+650 silly REMOVE node_modules/lightningcss-freebsd-x64
+651 silly REMOVE node_modules/lightningcss-darwin-x64
+652 silly REMOVE node_modules/lightningcss-darwin-arm64
+653 silly REMOVE node_modules/lightningcss-android-arm64
+654 silly REMOVE node_modules/lightningcss
+655 silly REMOVE node_modules/lightningcss/node_modules/detect-libc
+656 silly REMOVE node_modules/jiti
+657 silly REMOVE node_modules/is-number
+658 silly REMOVE node_modules/is-glob
+659 silly REMOVE node_modules/is-extglob
+660 silly REMOVE node_modules/graceful-fs
+661 silly REMOVE node_modules/fill-range
+662 silly CHANGE node_modules/enhanced-resolve
+663 silly ADD node_modules/enhanced-resolve/node_modules/tapable
+664 silly ADD node_modules/enhanced-resolve/node_modules/graceful-fs
+665 silly REMOVE node_modules/detect-libc
+666 silly REMOVE node_modules/cssesc
+667 silly REMOVE node_modules/braces
+668 verbose cwd /home/lamhuy/HuyOJ/HuyOJ/tmath
+669 verbose os Linux 5.15.146.1-microsoft-standard-WSL2
+670 verbose node v20.20.2
+671 verbose npm  v10.8.2
+672 verbose exit 0
+673 info ok
